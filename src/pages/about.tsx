@@ -1,10 +1,10 @@
-import { Banner } from 'components';
 import type { NextPage } from 'next';
+import { TabBar } from 'components';
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Banner />
+      <TabBar />
     </div>
   );
 };
