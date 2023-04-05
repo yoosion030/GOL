@@ -13,7 +13,6 @@ export function GlobalStyle() {
 
         a {
           text-decoration: none;
-          color: #ffffff;
         }
 
         body::-webkit-scrollbar {
