@@ -5,6 +5,7 @@ export const palette = {
     gray: '#B0B8C1',
   },
   fontSize: {
-    Title: '32px',
+    title: '32px',
+    content: '12px',
   },
 };
