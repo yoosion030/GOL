@@ -13,7 +13,7 @@ const SearchInput = () => {
   const { push } = useRouter();
 
   const handleSearch = ({ nickname }: SearchType) => {
-    push(`summoners/${nickname}`);
+    push(`info/${nickname}`);
   };
 
   return (
