@@ -8,4 +8,4 @@ export const palette = {
     title: '32px',
     content: '12px',
   },
-};
+} as const;
