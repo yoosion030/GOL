@@ -1,5 +1,6 @@
 import { css, Global } from '@emotion/react';
 import emotionReset from 'emotion-reset';
+import { palette } from './Palette';
 
 export function GlobalStyle() {
   return (
@@ -16,13 +17,12 @@ export function GlobalStyle() {
         }
 
         body::-webkit-scrollbar {
-          width: 16px;
+          width: 12px;
         }
 
         body::-webkit-scrollbar-thumb {
-          background-color: #ffffff;
+          background-color: ${palette.color.gray};
           border-radius: 10px;
-          border: 4px solid #0f0921;
           height: 56px;
           background-clip: content-box;
         }
