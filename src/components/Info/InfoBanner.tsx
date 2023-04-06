@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import { Box, Flex, Input, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
 import useRandomBackground from 'hooks/useRandomCharacter';
 import { css } from '@emotion/react';
+import { SummonersInfo } from 'types/Info';
 
-const InfoBanner = () => {
+const InfoBanner = ({ nickname, name }: SummonersInfo) => {
   const image = useRandomBackground();
 
   return (
@@ -59,10 +60,10 @@ const InfoBanner = () => {
             color="white"
             fontWeight="700"
           >
-            롯데리아케찹도둑엄준식엄준식식
+            {nickname}
           </Text>
           <Text fontSize={palette.fontSize.content} color="white">
-            3333 엄준식
+            {name}
           </Text>
         </Flex>
       </Flex>
