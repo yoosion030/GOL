@@ -16,7 +16,7 @@ const TabBar = () => {
 
   return (
     <Flex
-      w="500px"
+      width="500px"
       justifyContent="space-between"
       height="72px"
       alignItems="center"
