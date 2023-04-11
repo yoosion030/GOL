@@ -1,10 +1,11 @@
+import { PageLayout, Rank } from 'components';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <TabBar />
-    </div>
+    <PageLayout>
+      <Rank />
+    </PageLayout>
   );
 };
 

@@ -1,5 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box, Select } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
 import RankItem from './RankItem';
 import TitleSection from './TitleSection';
@@ -19,9 +18,21 @@ const Rank = () => {
       rank: '13연승',
     },
   ];
+
   return (
     <Box>
       <TitleSection />
+
+      <Select
+        marginTop="30px"
+        variant="unstyled"
+        placeholder="연승"
+        width="60px"
+        fontSize={palette.fontSize.content}
+      >
+        <option>연패</option>
+      </Select>
+
       {data.map((v, i) => (
         <RankItem {...v} key={i} index={i} />
       ))}

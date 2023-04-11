@@ -22,7 +22,7 @@ const SearchInput = () => {
       alignItems="center"
       width="100%"
       position="absolute"
-      top="180px"
+      top="16vh"
       padding="0 35px"
       as="form"
       onSubmit={handleSubmit(handleSearch)}

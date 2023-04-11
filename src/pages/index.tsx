@@ -1,11 +1,11 @@
-import { Banner } from 'components';
+import Search from 'components/Search';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Banner />
-    </div>
+    <>
+      <Search />
+    </>
   );
 };
 

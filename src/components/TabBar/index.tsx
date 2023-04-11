@@ -16,11 +16,12 @@ const TabBar = () => {
 
   return (
     <Flex
-      width="500px"
+      width="100vw"
+      maxWidth="500px"
       justifyContent="space-between"
       height="72px"
       alignItems="center"
-      padding="0 100px"
+      padding="0 9vh"
       backgroundColor="rgba(255, 255, 255, 0.2)"
       backdropFilter="blur(9px)"
       position="fixed"

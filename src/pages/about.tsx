@@ -1,12 +1,7 @@
 import type { NextPage } from 'next';
-import { TabBar } from 'components';
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <TabBar />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Home;
