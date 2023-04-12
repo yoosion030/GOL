@@ -4,12 +4,14 @@ import { palette } from 'shared/styles/Palette';
 import useRandomBackground from 'hooks/useRandomCharacter';
 import { css } from '@emotion/react';
 import { SummonersInfo } from 'types/Info';
+import useMobileMediaQuery from 'hooks/useMobileMediaQuery';
 
 const InfoBanner = ({ nickname, name }: SummonersInfo) => {
   const image = useRandomBackground();
+  const [isMobile] = useMobileMediaQuery();
 
   return (
-    <Box position="relative" height="280px">
+    <Box position="relative">
       <Image
         src={`/Character/${image}.png`}
         alt=""
@@ -18,10 +20,17 @@ const InfoBanner = ({ nickname, name }: SummonersInfo) => {
         placeholder="blur"
         blurDataURL={`/Character/${image}.png`}
         css={css`
-          filter: brightness(60%);
           position: absolute;
+          background-color: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.17) 0%,
+            rgba(0, 0, 0, 0.48) 64.58%,
+            #000000 100%,
+            rgba(0, 0, 0, 0.58) 100%
+          );
         `}
       />
+
       <Box
         css={css`
           background: linear-gradient(
@@ -32,17 +41,19 @@ const InfoBanner = ({ nickname, name }: SummonersInfo) => {
             rgba(0, 0, 0, 0.58) 100%
           );
         `}
-        height="280px"
+        height={isMobile ? '100%' : '280px'}
         position="absolute"
         z-index="2"
-        width="500px"
+        width={isMobile ? '100%' : '500px'}
         bottom="0"
         left="0"
       />
+
       <Flex
         position="relative"
         zIndex="5"
-        padding="162px 30px 0"
+        padding="14vh 2.7vh 0"
+        height="100%"
         justifyContent="space-between"
       >
         <Image
@@ -54,9 +65,11 @@ const InfoBanner = ({ nickname, name }: SummonersInfo) => {
             border-radius: 10px;
           `}
         />
-        <Flex flexDir="column" width="350px" gap="10px">
+        <Flex flexDir="column" width="30vh" gap="10px">
           <Text
-            fontSize={palette.fontSize.title}
+            fontSize={
+              isMobile ? palette.fontSize.mobileTitle : palette.fontSize.title
+            }
             color="white"
             fontWeight="700"
           >
