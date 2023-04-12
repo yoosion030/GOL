@@ -1,4 +1,4 @@
-import { Box, Select } from '@chakra-ui/react';
+import { Select } from '@chakra-ui/react';
 import { PageLayout } from 'components';
 import { palette } from 'shared/styles/Palette';
 import RankItem from './RankItem';

@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { Box, Flex, Input } from '@chakra-ui/react';
-import { palette } from 'shared/styles/Palette';
+import { Box, Flex } from '@chakra-ui/react';
 import useRandomBackground from 'hooks/useRandomCharacter';
 import * as I from 'assets';
 import SearchInput from './SearchInput';
