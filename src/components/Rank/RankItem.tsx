@@ -31,7 +31,7 @@ const RankItem = ({
           border-radius: 50%;
         `}
       />
-      <Box width="50vw" height="50px">
+      <Box width="50%" height="50px">
         <Text
           fontSize={palette.fontSize.smallTitle}
           fontWeight="700"
