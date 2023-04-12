@@ -11,5 +11,6 @@ export const palette = {
     medium: '20px',
     content: '12px',
     smallContent: '10px',
+    mobileTitle: '24px',
   },
 } as const;
