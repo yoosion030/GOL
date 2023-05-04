@@ -8,3 +8,4 @@ export { default as PageLayout } from './Layout/PageLayout';
 export { default as Rank } from './Rank';
 export { default as Search } from './Search';
 export { default as Info } from './Info';
+export { default as About } from './About';
