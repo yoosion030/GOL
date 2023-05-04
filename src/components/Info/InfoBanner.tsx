@@ -1,34 +1,24 @@
 import Image from 'next/image';
+import { css } from '@emotion/react';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
-import useRandomBackground from 'hooks/useRandomCharacter';
-import { css } from '@emotion/react';
 import { SummonersInfo } from 'types/Info';
+import useRandomBackground from 'hooks/useRandomCharacter';
 import useMobileMediaQuery from 'hooks/useMobileMediaQuery';
+import styled from '@emotion/styled';
 
 const InfoBanner = ({ nickname, name }: SummonersInfo) => {
   const image = useRandomBackground();
   const [isMobile] = useMobileMediaQuery();
 
   return (
-    <Box position="relative">
+    <InfoBannerContainer>
       <Image
         src={`/Character/${image}.png`}
         alt=""
-        width="500"
-        height="280"
+        layout="fill"
         placeholder="blur"
         blurDataURL={`/Character/${image}.png`}
-        css={css`
-          position: absolute;
-          background-color: linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.17) 0%,
-            rgba(0, 0, 0, 0.48) 64.58%,
-            #000000 100%,
-            rgba(0, 0, 0, 0.58) 100%
-          );
-        `}
       />
 
       <Box
@@ -44,7 +34,7 @@ const InfoBanner = ({ nickname, name }: SummonersInfo) => {
         height={isMobile ? '100%' : '280px'}
         position="absolute"
         z-index="2"
-        width={isMobile ? '100%' : '500px'}
+        width="100%"
         bottom="0"
         left="0"
       />
@@ -53,7 +43,6 @@ const InfoBanner = ({ nickname, name }: SummonersInfo) => {
         position="relative"
         zIndex="5"
         padding="14vh 2.7vh 0"
-        height="100%"
         justifyContent="space-between"
       >
         <Image
@@ -80,8 +69,17 @@ const InfoBanner = ({ nickname, name }: SummonersInfo) => {
           </Text>
         </Flex>
       </Flex>
-    </Box>
+    </InfoBannerContainer>
   );
 };
+
+export const InfoBannerContainer = styled.div`
+  width: 100%;
+  height: 25vh;
+  position: relative;
+  img {
+    filter: brightness(80%);
+  }
+`;
 
 export default InfoBanner;
