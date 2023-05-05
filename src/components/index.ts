@@ -7,9 +7,10 @@ export { default as SearchInput } from './Search/SearchInput';
 export { default as InfoBanner } from './Info/InfoBanner';
 export { default as GameHistory } from './GameHistory';
 export { default as GameHistoryItem } from './GameHistory/GameHistoryItem';
+export { default as SEOHelmet } from './SEOHelmet';
 
 export { default as Rank } from './Rank';
 export { default as Search } from './Search';
 export { default as Info } from './Info';
 export { default as About } from './About';
-export {default as Login} from './Login';
+export { default as Login } from './Login';
