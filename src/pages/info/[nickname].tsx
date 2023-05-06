@@ -1,9 +1,9 @@
-import { Info } from 'components';
 import type {
   GetServerSideProps,
   GetServerSidePropsContext,
   NextPage,
 } from 'next';
+import { Info, SEOHelmet } from 'components';
 import { SummonersInfo } from 'types/Info';
 
 const InfoPage: NextPage<{ nickname: string }> = ({
@@ -18,6 +18,7 @@ const InfoPage: NextPage<{ nickname: string }> = ({
 
   return (
     <>
+      <SEOHelmet seoTitle="전적" desc="닉네임으로 전적을 검색합니다." />
       <Info {...data} />
     </>
   );
@@ -28,6 +29,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 }: GetServerSidePropsContext) => {
   const nickname = params?.nickname;
   console.log(`nickname으로 데이터 요청`);
+
   return {
     props: { nickname },
   };
