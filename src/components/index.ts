@@ -5,8 +5,8 @@ export { default as TabBar } from './TabBar';
 export { default as SearchBanner } from './Search/SearchBanner';
 export { default as SearchInput } from './Search/SearchInput';
 export { default as InfoBanner } from './Info/InfoBanner';
-export { default as GameHistory } from './GameHistory';
-export { default as GameHistoryItem } from './GameHistory/GameHistoryItem';
+export { default as GameHistory } from './Info/GameHistory';
+export { default as GameHistoryItem } from './Info/GameHistory/GameHistoryItem';
 export { default as SEOHelmet } from './SEOHelmet';
 export { default as Modal } from './Modal';
 
