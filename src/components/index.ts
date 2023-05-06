@@ -8,6 +8,7 @@ export { default as InfoBanner } from './Info/InfoBanner';
 export { default as GameHistory } from './GameHistory';
 export { default as GameHistoryItem } from './GameHistory/GameHistoryItem';
 export { default as SEOHelmet } from './SEOHelmet';
+export { default as Modal } from './Modal';
 
 export { default as Rank } from './Rank';
 export { default as Search } from './Search';
