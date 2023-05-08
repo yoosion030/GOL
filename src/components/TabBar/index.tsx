@@ -9,7 +9,7 @@ const TabBar = () => {
   const router = useRouter();
 
   const TabBarItem: TabBarItemType[] = [
-    { icon: <I.SearchIcon />, link: '/', desc: '검색' },
+    { icon: <I.SearchIcon />, link: '/info', desc: '검색' },
     { icon: <I.RankIcon />, link: '/rank', desc: '랭킹' },
     { icon: <I.AboutIcon />, link: '/about', desc: '정보' },
   ];
@@ -26,6 +26,7 @@ const TabBar = () => {
       backdropFilter="blur(9px)"
       position="fixed"
       bottom="0"
+      zIndex="10"
     >
       {TabBarItem.map((item, index) => (
         <Flex
@@ -40,14 +41,16 @@ const TabBar = () => {
               viewBox="0 0 20 20"
               width="20px"
               height="20px"
-              fill={router.asPath === item.link ? '#1461B8' : '#000000'}
+              fill={router.asPath.includes(item.link) ? '#1461B8' : '#000000'}
             >
               {item.icon}
             </Icon>
           </Link>
           <Text
             fontSize={palette.fontSize.content}
-            color={router.asPath === item.link ? '#1461B8' : palette.color.gray}
+            color={
+              router.asPath.includes(item.link) ? '#1461B8' : palette.color.gray
+            }
           >
             {item.desc}
           </Text>
