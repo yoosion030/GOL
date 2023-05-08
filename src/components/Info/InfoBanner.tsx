@@ -3,12 +3,12 @@ import { css } from '@emotion/react';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
 import { SummonersInfo } from 'types/Info';
-import useRandomBackground from 'hooks/useRandomCharacter';
-import useMobileMediaQuery from 'hooks/useMobileMediaQuery';
+import { useRandomCharacter, useMobileMediaQuery } from 'hooks';
+
 import styled from '@emotion/styled';
 
 const InfoBanner = ({ nickname, name }: SummonersInfo) => {
-  const image = useRandomBackground();
+  const image = useRandomCharacter();
   const [isMobile] = useMobileMediaQuery();
 
   return (

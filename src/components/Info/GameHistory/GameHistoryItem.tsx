@@ -1,6 +1,6 @@
 import { Box, Flex, Grid } from '@chakra-ui/react';
 import { css } from '@emotion/react';
-import ImageLayout from 'components/Layout/ImageLayout';
+import { ImageLayout } from 'components';
 import { palette } from 'shared/styles/Palette';
 
 const GameHistoryItem = () => {

@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router';
-import { SummonersInfo } from 'types/Info';
-import InfoBanner from './InfoBanner';
-import { GameHistory, Modal } from 'components';
 import { useState } from 'react';
-import { palette } from 'shared/styles/Palette';
+import { GameHistory, Modal, InfoBanner } from 'components';
+import { SummonersInfo } from 'types/Info';
 
 const Info = ({ nickname, name }: SummonersInfo) => {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);

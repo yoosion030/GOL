@@ -6,13 +6,13 @@ import type {
 import { Info, SEOHelmet } from 'components';
 import { SummonersInfo } from 'types/Info';
 
-const InfoPage: NextPage<{ nickname: string }> = ({
-  nickname,
-}: {
+interface InfoPageProps {
   nickname: string;
-}) => {
+}
+
+const InfoPage: NextPage<InfoPageProps> = ({ nickname }: InfoPageProps) => {
   const data: SummonersInfo = {
-    nickname: '롯데리아케찹도둑엄준식',
+    nickname: nickname,
     name: '3333 엄준식',
   };
 

@@ -1,14 +1,14 @@
 import { Button, Flex, Text } from '@chakra-ui/react';
 import * as I from 'assets';
-import PageLayout from 'components/Layout/PageLayout';
 import { palette } from 'shared/styles/Palette';
+
 const Login = () => {
   return (
     <Flex
       flexDir="column"
       alignItems="center"
       color="white"
-      width="350px"
+      width="80%"
       justifyContent="center"
       height="70vh"
       margin="0 auto"
