@@ -5,7 +5,9 @@ import { palette } from 'shared/styles/Palette';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
-  const isLoginPage = router.pathname === '/login';
+  const isTabBarNeeded = ['/login'].includes(router.pathname);
+  const isReverseBackgroundColor = ['/login', '/404'].includes(router.pathname);
+
   return (
     <Flex
       flexDir="column"
@@ -13,13 +15,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       minH="100vh"
       padding="0"
       backgroundColor={
-        isLoginPage ? palette.color.main : palette.color.background
+        isReverseBackgroundColor ? palette.color.main : palette.color.background
       }
       position="relative"
       margin="0 auto"
     >
       {children}
-      {!isLoginPage && <TabBar />}
+      {!isTabBarNeeded && <TabBar />}
     </Flex>
   );
 };

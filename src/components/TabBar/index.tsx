@@ -43,7 +43,7 @@ const TabBar = () => {
               width="20px"
               height="20px"
               fill={
-                router.asPath.includes(item.link)
+                router.pathname.includes(item.link)
                   ? palette.color.main
                   : '#000000'
               }
@@ -54,7 +54,7 @@ const TabBar = () => {
           <Text
             fontSize={palette.fontSize.content}
             color={
-              router.asPath.includes(item.link)
+              router.pathname.includes(item.link)
                 ? palette.color.main
                 : palette.color.gray
             }
