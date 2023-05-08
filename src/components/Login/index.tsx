@@ -7,7 +7,7 @@ const Login = () => {
     <Flex
       flexDir="column"
       alignItems="center"
-      color="white"
+      color={palette.color.white}
       width="80%"
       justifyContent="center"
       height="70vh"

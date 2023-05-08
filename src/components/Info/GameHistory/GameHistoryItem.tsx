@@ -39,7 +39,7 @@ const GameHistoryItem = () => {
                 bottom="0"
                 backgroundColor="#AF4444"
                 fontSize="1px"
-                color="#ffffff"
+                color={palette.color.white}
                 width="40px"
                 height="20px"
                 textAlign="center"
@@ -59,7 +59,7 @@ const GameHistoryItem = () => {
                 bottom="0"
                 backgroundColor="#000000"
                 fontSize="1px"
-                color="#ffffff"
+                color={palette.color.white}
                 width="20px"
                 height="20px"
                 textAlign="center"
@@ -125,7 +125,7 @@ const GameHistoryItem = () => {
                 bottom="0"
                 backgroundColor="#5653C2"
                 fontSize="1px"
-                color="#ffffff"
+                color={palette.color.white}
                 width="40px"
                 height="20px"
                 textAlign="center"
@@ -145,7 +145,7 @@ const GameHistoryItem = () => {
                 bottom="0"
                 backgroundColor="#000000"
                 fontSize="1px"
-                color="#ffffff"
+                color={palette.color.white}
                 width="20px"
                 height="20px"
                 textAlign="center"

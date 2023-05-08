@@ -59,12 +59,12 @@ const InfoBanner = ({ nickname, name }: SummonersInfo) => {
             fontSize={
               isMobile ? palette.fontSize.mobileTitle : palette.fontSize.title
             }
-            color="white"
+            color={palette.color.white}
             fontWeight="700"
           >
             {nickname}
           </Text>
-          <Text fontSize={palette.fontSize.content} color="white">
+          <Text fontSize={palette.fontSize.content} color={palette.color.white}>
             {name}
           </Text>
         </Flex>

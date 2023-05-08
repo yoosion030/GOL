@@ -31,7 +31,7 @@ const ModalContainer = ({
         display="flex"
         width="36vh"
         height="23vh"
-        backgroundColor="#ffffff"
+        backgroundColor={palette.color.white}
         borderRadius="32px"
         padding="3.5vh 3.5vh 2.8vh"
         flexDir="column"
@@ -63,7 +63,7 @@ const ModalContainer = ({
             width="45%"
             height="100%"
             fontSize={palette.fontSize.smallTitle}
-            color="#ffffff"
+            color={palette.color.white}
             backgroundColor={palette.color[colorScheme]}
             borderRadius="10px"
             colorScheme={colorScheme === 'main' ? 'blue' : colorScheme}

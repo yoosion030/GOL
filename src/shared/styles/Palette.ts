@@ -4,6 +4,7 @@ export const palette = {
     background: '#F2F4F6',
     gray: '#B0B8C1',
     red: '#D22A36',
+    white: '#ffffff',
   },
   fontSize: {
     title: '32px',

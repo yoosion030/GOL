@@ -6,7 +6,6 @@ interface SEOHelmetProps {
 }
 
 const SEOHelmet = ({ seoTitle, desc }: SEOHelmetProps) => {
-  console.log(seoTitle);
   return (
     <Head>
       <title>{['GOL', seoTitle].join(' | ')}</title>

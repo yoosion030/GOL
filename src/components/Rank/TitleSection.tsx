@@ -10,7 +10,7 @@ const TitleSection = () => {
       <Text
         fontSize={palette.fontSize.title}
         fontWeight="700"
-        lineHeight="40px"
+        lineHeight="45px"
       >
         GSM 랭크
       </Text>
