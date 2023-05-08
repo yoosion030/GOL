@@ -12,23 +12,14 @@ export function GlobalStyle() {
           font-family: 'Noto Sans KR', sans-serif;
         }
 
+        body::-webkit-scrollbar {
+          -ms-overflow-style: none;
+          display: none;
+          scrollbar-width: none; /* Firefox */
+        }
+
         a {
           text-decoration: none;
-        }
-
-        body::-webkit-scrollbar {
-          width: 12px;
-        }
-
-        body::-webkit-scrollbar-thumb {
-          background-color: ${palette.color.gray};
-          border-radius: 10px;
-          height: 56px;
-          background-clip: content-box;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-          background-color: #cbcbcb;
         }
 
         *,
