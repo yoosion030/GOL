@@ -57,7 +57,7 @@ const RankItem = ({
         <Text color={palette.color.red} fontSize={palette.fontSize.medium}>
           {rank}
         </Text>
-        <Link href={nickname}>
+        <Link href={`/info/${nickname}`}>
           <Text
             fontSize={palette.fontSize.smallContent}
             color={palette.color.gray}
