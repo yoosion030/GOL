@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid } from '@chakra-ui/react';
 import { css } from '@emotion/react';
 import ImageLayout from 'components/Layout/ImageLayout';
 import { palette } from 'shared/styles/Palette';
@@ -8,7 +8,7 @@ const GameHistoryItem = () => {
     <>
       <Flex
         width="100%"
-        height="100px"
+        height="9vh"
         backgroundColor="#FFE8E8"
         borderBottom={`0.5px solid ${palette.color.gray}`}
       >
