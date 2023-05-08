@@ -12,6 +12,7 @@ const TabBar = () => {
     { icon: <I.SearchIcon />, link: '/info', desc: '검색' },
     { icon: <I.RankIcon />, link: '/rank', desc: '랭킹' },
     { icon: <I.AboutIcon />, link: '/about', desc: '정보' },
+    { icon: <I.UserIcon />, link: '/user', desc: '마이' },
   ];
 
   return (
@@ -41,7 +42,11 @@ const TabBar = () => {
               viewBox="0 0 20 20"
               width="20px"
               height="20px"
-              fill={router.asPath.includes(item.link) ? '#1461B8' : '#000000'}
+              fill={
+                router.asPath.includes(item.link)
+                  ? palette.color.main
+                  : '#000000'
+              }
             >
               {item.icon}
             </Icon>
@@ -49,7 +54,9 @@ const TabBar = () => {
           <Text
             fontSize={palette.fontSize.content}
             color={
-              router.asPath.includes(item.link) ? '#1461B8' : palette.color.gray
+              router.asPath.includes(item.link)
+                ? palette.color.main
+                : palette.color.gray
             }
           >
             {item.desc}
