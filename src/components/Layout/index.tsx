@@ -12,11 +12,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <Flex
       flexDir="column"
       maxW="500px"
-      minH="100vh"
+      height="100vh"
       padding="0"
       backgroundColor={
         isReverseBackgroundColor ? palette.color.main : palette.color.background
       }
+      overflow="hidden"
       position="relative"
       margin="0 auto"
     >

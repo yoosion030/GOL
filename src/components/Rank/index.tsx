@@ -1,4 +1,4 @@
-import { Select } from '@chakra-ui/react';
+import { Box, Select } from '@chakra-ui/react';
 import { PageLayout } from 'components';
 import { palette } from 'shared/styles/Palette';
 import RankItem from './RankItem';
@@ -100,9 +100,11 @@ const Rank = () => {
         <option>연패</option>
       </Select>
 
-      {data.map((v, i) => (
-        <RankItem {...v} key={i} index={i} />
-      ))}
+      <Box overflow="scroll" height="80vh" paddingBottom="70px">
+        {data.map((v, i) => (
+          <RankItem {...v} key={i} index={i} />
+        ))}
+      </Box>
     </PageLayout>
   );
 };

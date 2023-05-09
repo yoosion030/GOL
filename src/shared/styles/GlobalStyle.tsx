@@ -12,7 +12,7 @@ export function GlobalStyle() {
           font-family: 'Noto Sans KR', sans-serif;
         }
 
-        body::-webkit-scrollbar {
+        *::-webkit-scrollbar {
           -ms-overflow-style: none;
           display: none;
           scrollbar-width: none; /* Firefox */
