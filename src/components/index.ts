@@ -9,10 +9,10 @@ export { default as GameHistory } from './Info/GameHistory';
 export { default as GameHistoryItem } from './Info/GameHistory/GameHistoryItem';
 export { default as RankItem } from './Rank/RankItem';
 export { default as RankHeader } from './Rank/RankHeader';
-export { default as TitleSection } from './Rank/TitleSection';
 export { default as SelectCategory } from './Rank/SelectCategory';
 export { default as SEOHelmet } from './SEOHelmet';
 export { default as Modal } from './Modal';
+export { default as TitleSection } from './TitleSection';
 
 export { default as Rank } from './Rank';
 export { default as Search } from './Search';
@@ -20,3 +20,4 @@ export { default as Info } from './Info';
 export { default as About } from './About';
 export { default as Login } from './Login';
 export { default as NotFound } from './NotFound';
+export { default as User } from './User';
