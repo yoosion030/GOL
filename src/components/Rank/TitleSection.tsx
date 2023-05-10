@@ -6,7 +6,7 @@ const today = new Date();
 
 const TitleSection = () => {
   return (
-    <Flex flexDir="column">
+    <Flex flexDir="column" marginBottom="40px">
       <Text
         fontSize={palette.fontSize.title}
         fontWeight="700"
