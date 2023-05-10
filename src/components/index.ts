@@ -1,6 +1,6 @@
 export { default as Layout } from './Layout';
 export { default as PageLayout } from './Layout/PageLayout';
-export { default as ImageLayout } from './Layout/ImageLayout';
+export { default as ItemImage } from './Info/GameHistory/ItemImage';
 export { default as TabBar } from './TabBar';
 export { default as SearchBanner } from './Search/SearchBanner';
 export { default as SearchInput } from './Search/SearchInput';

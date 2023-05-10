@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import Image from 'next/image';
 
-const ImageLayout = ({ src }: { src: string }) => {
+const ItemImage = ({ src }: { src: string }) => {
   return (
     <Image
       alt=""
@@ -15,4 +15,4 @@ const ImageLayout = ({ src }: { src: string }) => {
   );
 };
 
-export default ImageLayout;
+export default ItemImage;

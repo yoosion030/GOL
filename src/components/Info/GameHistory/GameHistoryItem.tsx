@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
-import { css } from '@emotion/react';
-import { ImageLayout } from 'components';
 import Image from 'next/image';
+import { css } from '@emotion/react';
+import { ItemImage } from 'components';
 import { palette } from 'shared/styles/Palette';
 import { Content } from 'types/Match';
 
@@ -77,10 +77,10 @@ const GameHistoryItem = ({ data }: { data: Content }) => {
               </Box>
             </Box>
             <Grid templateColumns="repeat(2, 2fr)" gap="2px">
-              <ImageLayout src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
-              <ImageLayout src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
-              <ImageLayout src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
-              <ImageLayout src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
+              <ItemImage src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
+              <ItemImage src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
+              <ItemImage src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
+              <ItemImage src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
             </Grid>
           </Flex>
           <Box textAlign="center">
@@ -91,9 +91,9 @@ const GameHistoryItem = ({ data }: { data: Content }) => {
             gap="2px"
             // gridTemplateRows="repeat(2, 1fr)"
           >
-            <ImageLayout src={data.item0Uri} />
-            <ImageLayout src={data.item1Uri} />
-            <ImageLayout src={data.item2Uri} />
+            <ItemImage src={data.item0Uri} />
+            <ItemImage src={data.item1Uri} />
+            <ItemImage src={data.item2Uri} />
             <GridItem
               css={css`
                 grid-column-start: 4;
@@ -103,12 +103,12 @@ const GameHistoryItem = ({ data }: { data: Content }) => {
               display="flex"
               alignItems="center"
             >
-              <ImageLayout src={data.item6Uri} />
+              <ItemImage src={data.item6Uri} />
             </GridItem>
-            <ImageLayout src={data.item3Uri} />
-            <ImageLayout src={data.item4Uri} />
+            <ItemImage src={data.item3Uri} />
+            <ItemImage src={data.item4Uri} />
             <GridItem>
-              <ImageLayout src={data.item5Uri} />
+              <ItemImage src={data.item5Uri} />
             </GridItem>
           </Grid>
         </Flex>
