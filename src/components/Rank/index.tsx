@@ -8,7 +8,7 @@ import TitleSection from './TitleSection';
 const Rank = () => {
   const data = [
     {
-      nickname: '롯데리아케찹도둑엄준식',
+      nickname: '일이삼사오육칠팔구십일이삼사오육',
       name: '3333 엄준식',
       tier: 'sliver 3',
       rank: '13연승',
@@ -106,12 +106,12 @@ const Rank = () => {
           alignItems="center"
           backgroundColor="rgba(226, 232, 240, 0.7);"
           justifyContent="space-between"
-          fontSize="14px"
+          fontSize="12px"
           fontWeight="700"
           color="#666666"
           borderRadius="10px"
           backdropFilter=" blur(10px)"
-          padding="0 10px"
+          padding="0 1vh"
         >
           <Text width="10%" textAlign="center">
             순위
@@ -120,7 +120,7 @@ const Rank = () => {
           <Text width="60px">연승</Text>
         </Flex>
 
-        <Box padding="0px 0 120px">
+        <Box padding="0px 0 20vh">
           {data.map((v, i) => (
             <RankItem {...v} key={i} index={i} />
           ))}
