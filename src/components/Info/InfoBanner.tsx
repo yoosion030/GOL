@@ -6,7 +6,7 @@ import { SummonersInfo } from 'types/Info';
 import { useRandomCharacter, useMobileMediaQuery } from 'hooks';
 import styled from '@emotion/styled';
 
-const InfoBanner = ({ nickname, name }: SummonersInfo) => {
+const InfoBanner = ({ nickname, name = '사용자 등록 필요' }: SummonersInfo) => {
   const image = useRandomCharacter();
   const [isMobile] = useMobileMediaQuery();
 

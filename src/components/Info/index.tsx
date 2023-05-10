@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { GameHistory, Modal, InfoBanner, RegisterForm } from 'components';
+import { useEffect } from 'react';
+import { GameHistory, InfoBanner, RegisterForm } from 'components';
 import { SummeonerType } from 'types/Summoner';
 
 interface InfoProps {
@@ -10,14 +10,18 @@ interface InfoProps {
 const Info = ({ data }: InfoProps) => {
   useEffect(() => {}, []);
 
-  const router = useRouter();
-  const { nickname } = router.query;
-
+  const { userDto } = data;
+  const number = [userDto.grade, userDto.classNum, userDto.num].join('');
+  const name = [number, userDto.name].join(' ');
   return (
     <>
-      <InfoBanner nickname={nickname} name={data?.name} />
+      <InfoBanner nickname={data?.name} name={name} />
 
-      {!data?.isRegistered ? <RegisterForm /> : <GameHistory />}
+      {!data?.isRegistered ? (
+        <RegisterForm accountId={data?.accountId} />
+      ) : (
+        <GameHistory />
+      )}
     </>
   );
 };

@@ -7,6 +7,7 @@ export { default as SearchInput } from './Search/SearchInput';
 export { default as InfoBanner } from './Info/InfoBanner';
 export { default as GameHistory } from './Info/GameHistory';
 export { default as GameHistoryItem } from './Info/GameHistory/GameHistoryItem';
+export { default as RegisterForm } from './Info/RegisterForm';
 export { default as RankItem } from './Rank/RankItem';
 export { default as RankHeader } from './Rank/RankHeader';
 export { default as SelectCategory } from './Rank/SelectCategory';
