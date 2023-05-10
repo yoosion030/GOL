@@ -1,5 +1,6 @@
 import { Flex, Icon, Text } from '@chakra-ui/react';
 import * as I from 'assets';
+import { useMobileMediaQuery } from 'hooks';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { palette } from 'shared/styles/Palette';
@@ -7,7 +8,7 @@ import { TabBarItemType } from 'types/TabBar';
 
 const TabBar = () => {
   const router = useRouter();
-
+  const [isMobile] = useMobileMediaQuery();
   const TabBarItem: TabBarItemType[] = [
     { icon: <I.SearchIcon />, link: '/info', desc: '검색' },
     { icon: <I.RankIcon />, link: '/rank', desc: '랭킹' },
@@ -20,7 +21,7 @@ const TabBar = () => {
       width="100vw"
       maxWidth="500px"
       justifyContent="space-between"
-      height="72px"
+      height="6.4vh"
       alignItems="center"
       padding="0 9vh"
       backgroundColor="rgba(255, 255, 255, 0.2)"
@@ -40,8 +41,8 @@ const TabBar = () => {
           <Link href={item.link}>
             <Icon
               viewBox="0 0 20 20"
-              width="20px"
-              height="20px"
+              width={isMobile ? '15px' : '20px'}
+              height={isMobile ? '15px' : '20px'}
               fill={
                 router.pathname.includes(item.link)
                   ? palette.color.main
