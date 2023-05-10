@@ -30,7 +30,7 @@ const SearchInput = () => {
       <Input
         placeholder="소환사 명을 입력해주세요."
         width="431px"
-        height="50px"
+        height="4.5vh"
         fontSize={palette.fontSize.content}
         variant="unstyled"
         borderRadius="48px"

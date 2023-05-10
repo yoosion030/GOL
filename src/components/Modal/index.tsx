@@ -6,6 +6,7 @@ import {
   ModalOverlay,
   Text,
 } from '@chakra-ui/react';
+import { useMobileMediaQuery } from 'hooks';
 import { palette } from 'shared/styles/Palette';
 interface ModalPropsType {
   isOpen: boolean;
@@ -24,6 +25,8 @@ const ModalContainer = ({
   mode,
   colorScheme,
 }: ModalPropsType) => {
+  const [isMobile] = useMobileMediaQuery();
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay backgroundColor="rgba(0, 0, 0, 0.24)" />
@@ -37,13 +40,20 @@ const ModalContainer = ({
         flexDir="column"
         justifyContent="space-between"
       >
-        <Text fontSize={palette.fontSize.medium} fontWeight="700">
+        <Text
+          fontSize={
+            isMobile ? palette.fontSize.smallTitle : palette.fontSize.medium
+          }
+          fontWeight="700"
+        >
           {modalTitle}
         </Text>
         <Text
           color={palette.color.gray}
-          fontSize={palette.fontSize.smallTitle}
-          lineHeight="25px"
+          fontSize={
+            isMobile ? palette.fontSize.content : palette.fontSize.smallTitle
+          }
+          lineHeight={isMobile ? '20px' : '24px'}
           whiteSpace="pre-wrap"
         >
           {modalContent}
@@ -52,7 +62,9 @@ const ModalContainer = ({
           <Button
             width="45%"
             height="100%"
-            fontSize={palette.fontSize.smallTitle}
+            fontSize={
+              isMobile ? palette.fontSize.content : palette.fontSize.smallTitle
+            }
             color={palette.color[colorScheme]}
             onClick={onClose}
             borderRadius="10px"
@@ -62,7 +74,9 @@ const ModalContainer = ({
           <Button
             width="45%"
             height="100%"
-            fontSize={palette.fontSize.smallTitle}
+            fontSize={
+              isMobile ? palette.fontSize.content : palette.fontSize.smallTitle
+            }
             color={palette.color.white}
             backgroundColor={palette.color[colorScheme]}
             borderRadius="10px"
