@@ -10,10 +10,10 @@ const TabBar = () => {
   const router = useRouter();
   const [isMobile] = useMobileMediaQuery();
   const TabBarItem: TabBarItemType[] = [
-    { icon: <I.SearchIcon />, link: '/info', desc: '검색' },
-    { icon: <I.RankIcon />, link: '/rank', desc: '랭킹' },
-    { icon: <I.AboutIcon />, link: '/about', desc: '정보' },
-    { icon: <I.UserIcon />, link: '/user', desc: '마이' },
+    { icon: <I.SearchIcon />, link: '/info', desc: 'search' },
+    { icon: <I.RankIcon />, link: '/rank', desc: 'ranking' },
+    { icon: <I.AboutIcon />, link: '/about', desc: 'about' },
+    { icon: <I.UserIcon />, link: '/user', desc: 'my' },
   ];
 
   return (
