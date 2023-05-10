@@ -4,7 +4,6 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
 import { SummonersInfo } from 'types/Info';
 import { useRandomCharacter, useMobileMediaQuery } from 'hooks';
-
 import styled from '@emotion/styled';
 
 const InfoBanner = ({ nickname, name }: SummonersInfo) => {
