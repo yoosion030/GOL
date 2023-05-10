@@ -23,7 +23,7 @@ const TabBar = () => {
       justifyContent="space-between"
       height="6.4vh"
       alignItems="center"
-      padding="0 9vh"
+      padding="0 5vh"
       backgroundColor="rgba(255, 255, 255, 0.2)"
       backdropFilter="blur(9px)"
       position="fixed"

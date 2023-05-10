@@ -91,7 +91,7 @@ const Rank = () => {
 
   return (
     <PageLayout>
-      <TitleSection />
+      <TitleSection mode="rank" />
       <SelectCategory />
       <Box overflow="scroll" height="80vh" position="relative">
         <RankHeader />
