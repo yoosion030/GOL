@@ -5,8 +5,8 @@ import { palette } from 'shared/styles/Palette';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
-  const isTabBarNeeded = ['/login'].includes(router.pathname);
-  const isReverseBackgroundColor = ['/login', '/404'].includes(router.pathname);
+  const isTabBarNeeded = ['/gauth'].includes(router.pathname);
+  const isReverseBackgroundColor = ['/gauth', '/404'].includes(router.pathname);
 
   return (
     <Flex

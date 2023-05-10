@@ -1,5 +1,6 @@
 import { Button, Flex, Text } from '@chakra-ui/react';
 import * as I from 'assets';
+import Link from 'next/link';
 import { palette } from 'shared/styles/Palette';
 
 const Login = () => {
@@ -32,7 +33,9 @@ const Login = () => {
         height="60px"
         color={palette.color.main}
       >
-        Sign in with GAuth
+        <Link href="https://gauth.co.kr/login?client_id=e5502aa30a504963a3327e84b916e1bff3eafe1987834bfd9806a01bf8c2a8cd&redirect_uri=http://localhost:3000/gauth/code">
+          Sign in with GAuth
+        </Link>
       </Button>
     </Flex>
   );
