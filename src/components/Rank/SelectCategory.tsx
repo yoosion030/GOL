@@ -1,15 +1,33 @@
 import styled from '@emotion/styled';
+import { Dispatch, SetStateAction } from 'react';
 import { palette } from 'shared/styles/Palette';
+import { CategoryType, labelType, RankCategoryType } from 'types/Rank';
 
-const SelectCategory = () => {
+const SelectCategory = ({
+  onChangeCategory,
+}: {
+  onChangeCategory: Dispatch<SetStateAction<RankCategoryType>>;
+}) => {
   return (
-    <Select>
-      <option>연승</option>
-      <option>연패</option>
-      <option>솔로랭크</option>
-      <option>자유랭크</option>
-      <option>레벨</option>
-      <option>플레이횟수</option>
+    <Select
+      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+        const category = e.target.value as CategoryType;
+
+        const label = e.target.options[e.target.selectedIndex]
+          .text as labelType;
+
+        onChangeCategory({
+          category,
+          label,
+        });
+      }}
+    >
+      <option value="TIER_RANKED_SOLO_5x5">솔로랭크</option>
+      <option value="TIER_RANKED_FLEX_SR">자유랭크</option>
+      <option value="CUR_LOSE_STREAK">연패</option>
+      <option value="CUR_WIN_STREAK">연승</option>
+      <option value="MATCH_COUNT">플레이횟수</option>
+      <option value="SUMMONER_LEVEL">레벨</option>
     </Select>
   );
 };

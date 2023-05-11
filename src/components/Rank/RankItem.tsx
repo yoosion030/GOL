@@ -1,19 +1,17 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import { css } from '@emotion/react';
 import { useMobileMediaQuery } from 'hooks';
 import Image from 'next/image';
 import Link from 'next/link';
 import { palette } from 'shared/styles/Palette';
-import { RankItemType } from 'types/Rank';
+import { RankType } from 'types/Rank';
 
-const RankItem = ({
-  nickname,
-  name,
-  tier,
-  rank,
-  index,
-}: RankItemType & { index: number }) => {
+const RankItem = ({ data }: { data: RankType }) => {
   const [isMobile] = useMobileMediaQuery();
+  const { userDto } = data.summonerResDto;
+
+  const number = [userDto.grade, userDto.classNum, userDto.num].join('');
+  const name = [number, userDto.name].join(' ');
 
   return (
     <Flex
@@ -31,7 +29,7 @@ const RankItem = ({
         width="30px"
         textAlign="center"
       >
-        {index + 1}
+        {data.rankingNumber}
       </Text>
 
       <Flex width="60%" height="4.5vh" gap="20px" alignItems="center">
@@ -51,7 +49,7 @@ const RankItem = ({
             }
             fontWeight="700"
           >
-            {nickname}
+            {data.summonerResDto.name}
           </Text>
           <Text
             fontSize={palette.fontSize.smallContent}
@@ -65,7 +63,7 @@ const RankItem = ({
             color={palette.color.main}
             marginTop="4px"
           >
-            {tier}
+            {data.rankType}
           </Text>
         </div>
       </Flex>
@@ -76,9 +74,9 @@ const RankItem = ({
             isMobile ? palette.fontSize.smallTitle : palette.fontSize.medium
           }
         >
-          {rank}
+          {data.rankValue}
         </Text>
-        <Link href={`/info/${nickname}`}>
+        <Link href={`/info/${data.summonerResDto.name}`}>
           <Text
             fontSize={palette.fontSize.smallContent}
             color={palette.color.gray}

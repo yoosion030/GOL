@@ -1,6 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
+import { labelType } from 'types/Rank';
 
-const RankHeader = () => {
+const RankHeader = ({ label }: { label: labelType }) => {
   return (
     <Flex
       height="45px"
@@ -20,7 +21,7 @@ const RankHeader = () => {
         순위
       </Text>
       <Text width="60%">사용자</Text>
-      <Text width="60px">연승</Text>
+      <Text width="60px">{label}</Text>
     </Flex>
   );
 };
