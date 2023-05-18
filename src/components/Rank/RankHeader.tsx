@@ -9,7 +9,6 @@ const RankHeader = ({ label }: { label: labelType }) => {
       top="0"
       alignItems="center"
       backgroundColor="rgba(226, 232, 240, 0.7);"
-      justifyContent="space-between"
       fontSize="12px"
       fontWeight="700"
       color="#666666"
@@ -17,11 +16,13 @@ const RankHeader = ({ label }: { label: labelType }) => {
       backdropFilter=" blur(10px)"
       padding="0 1vh"
     >
-      <Text width="10%" textAlign="center">
+      <Text width="10%" textAlign="center" marginRight="15px">
         순위
       </Text>
-      <Text width="60%">사용자</Text>
-      <Text width="60px">{label}</Text>
+      <Text>사용자</Text>
+      <Text width="60px" marginLeft="auto" textAlign="center">
+        {label}
+      </Text>
     </Flex>
   );
 };

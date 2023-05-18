@@ -17,9 +17,9 @@ const Rank = () => {
 
   const testData: RankType[] = [
     {
-      rankType: 'TIER_RANKED_SOLO_5x5', // 랭킹 카테고리
+      rankType: 'SUMMONER_LEVEL', // 랭킹 카테고리
       rankingNumber: 1, // 순위
-      rankValue: 'RANKED_SOLO_5x5_GOLD_I_39', // 랭킹 값
+      rankValue: '11', // 랭킹 값
       summonerResDto: {
         id: 'bca71793-ed25-49f5-b0dc-dec7699deb06',
         summonerApiId:
@@ -49,7 +49,7 @@ const Rank = () => {
     {
       rankType: 'TIER_RANKED_SOLO_5x5',
       rankingNumber: 2,
-      rankValue: 'RANKED_SOLO_5x5_GOLD_II_54',
+      rankValue: 'RANKED_SOLO_5x5_GRANDMASTER_II_54',
       summonerResDto: {
         id: 'e31fc116-15da-49c9-a0ee-b7085f7f9145',
         summonerApiId: 'DIiLDPb8BjQewHIbqm1adVUIAObCRiA-wHgAU7mKaGjRNgI',
