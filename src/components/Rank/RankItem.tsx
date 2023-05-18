@@ -63,12 +63,6 @@ const RankItem = ({
           >
             {name}
           </Text>
-          <Text
-            fontSize={palette.fontSize.smallContent}
-            color={palette.color.main}
-          >
-            {rankType}
-          </Text>
         </Flex>
       </Flex>
       <Flex
