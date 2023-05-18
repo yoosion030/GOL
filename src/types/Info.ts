@@ -1,4 +1,4 @@
 export interface SummonersInfo {
   nickname: string;
-  name: string;
+  name: string | null;
 }
