@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import { ItemImage } from 'components';
 import { palette } from 'shared/styles/Palette';
 import { Content } from 'types/Match';
+import { formatItemImage, formatRuneImage, formatSpellImage } from 'utils';
 
 const GameHistoryItem = ({ data }: { data: Content }) => {
   const KDA = (data.kills + data.assists / data.deaths).toFixed(1);
@@ -77,23 +78,19 @@ const GameHistoryItem = ({ data }: { data: Content }) => {
               </Box>
             </Box>
             <Grid templateColumns="repeat(2, 2fr)" gap="2px">
-              <ItemImage src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
-              <ItemImage src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
-              <ItemImage src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
-              <ItemImage src="https://opgg-static.akamaized.net/meta/images/lol/item/4633.png?image=q_auto,f_webp,w_44&v=1683110240889" />
+              <ItemImage src={formatSpellImage(data.summoner1Id.toString())} />
+              <ItemImage src={formatRuneImage(data.primaryStyle)} />
+              <ItemImage src={formatSpellImage(data.summoner2Id.toString())} />
+              <ItemImage src={formatRuneImage(data.subStyle)} />
             </Grid>
           </Flex>
           <Box textAlign="center">
             {data.kills} / {data.deaths} / {data.assists} <br /> 111 ({KDA}) CS
           </Box>
-          <Grid
-            templateColumns="repeat(3, 1fr)"
-            gap="2px"
-            // gridTemplateRows="repeat(2, 1fr)"
-          >
-            <ItemImage src={data.item0Uri} />
-            <ItemImage src={data.item1Uri} />
-            <ItemImage src={data.item2Uri} />
+          <Grid templateColumns="repeat(3, 1fr)" gap="2px">
+            <ItemImage src={formatItemImage(data.item0)} />
+            <ItemImage src={formatItemImage(data.item1)} />
+            <ItemImage src={formatItemImage(data.item2)} />
             <GridItem
               css={css`
                 grid-column-start: 4;
@@ -103,12 +100,12 @@ const GameHistoryItem = ({ data }: { data: Content }) => {
               display="flex"
               alignItems="center"
             >
-              <ItemImage src={data.item6Uri} />
+              <ItemImage src={formatItemImage(data.item6)} />
             </GridItem>
-            <ItemImage src={data.item3Uri} />
-            <ItemImage src={data.item4Uri} />
+            <ItemImage src={formatItemImage(data.item3)} />
+            <ItemImage src={formatItemImage(data.item4)} />
             <GridItem>
-              <ItemImage src={data.item5Uri} />
+              <ItemImage src={formatItemImage(data.item5)} />
             </GridItem>
           </Grid>
         </Flex>

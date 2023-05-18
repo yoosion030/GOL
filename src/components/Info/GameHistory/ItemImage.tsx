@@ -8,6 +8,8 @@ const ItemImage = ({ src }: { src: string }) => {
       src={src}
       css={css`
         border-radius: 8px;
+        background-color: black;
+        object-fit: none;
       `}
       width="22"
       height="22"
