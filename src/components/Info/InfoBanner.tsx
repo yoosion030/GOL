@@ -6,7 +6,7 @@ import { SummonersInfo } from 'types/Info';
 import { useRandomCharacter, useMobileMediaQuery } from 'hooks';
 import styled from '@emotion/styled';
 
-const InfoBanner = ({ nickname, name = '사용자 등록 필요' }: SummonersInfo) => {
+const InfoBanner = ({ nickname, name }: SummonersInfo) => {
   const image = useRandomCharacter();
   const [isMobile] = useMobileMediaQuery();
 
@@ -64,7 +64,7 @@ const InfoBanner = ({ nickname, name = '사용자 등록 필요' }: SummonersInf
             {nickname}
           </Text>
           <Text fontSize={palette.fontSize.content} color={palette.color.white}>
-            {name}
+            {name ?? '사용자 등록 필요'}
           </Text>
         </Flex>
       </Flex>
