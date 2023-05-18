@@ -14,6 +14,7 @@ export { default as SelectCategory } from './Rank/SelectCategory';
 export { default as SEOHelmet } from './SEOHelmet';
 export { default as Modal } from './Modal';
 export { default as TitleSection } from './TitleSection';
+export { default as UserInfo } from './User/UserInfo';
 
 export { default as Rank } from './Rank';
 export { default as Search } from './Search';

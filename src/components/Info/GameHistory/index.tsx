@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { Modal, GameHistoryItem } from 'components';
+import { GameHistoryItem } from 'components';
 import { Box } from '@chakra-ui/react';
-import { deleteSummeoner } from 'utils/Summeoner';
 import { MatchType } from 'types/Match';
 
 const GameHistory = () => {
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const router = useRouter();
   const { nickname } = router.query;
   const testData: MatchType = {
@@ -73,9 +71,9 @@ const GameHistory = () => {
         assists: 7,
         summoner1Id: 6,
         summoner2Id: 11,
-        primaryStyle: 8000,
-        subStyle: 8200,
-        item0: 6672,
+        primaryStyle: 8100,
+        subStyle: 8300,
+        item0: 0,
         item1: 3133,
         item2: 3111,
         item3: 1037,
@@ -131,16 +129,6 @@ const GameHistory = () => {
 
   return (
     <>
-      <div onClick={() => setIsDeleteModalOpen(true)}>사용자 해제 테스트</div>
-      <Modal
-        isOpen={isDeleteModalOpen}
-        onClose={() => setIsDeleteModalOpen(false)}
-        modalTitle="정말 등록을 해제할까요?"
-        modalContent={`등록 해제 시 모든 기록이 삭제됩니다. \n정말로 등록 해제를 진행하시겠습니까? \n이 작업은 되돌릴 수 없습니다.`}
-        mode="해제"
-        colorScheme="red"
-        success={() => deleteSummeoner('accountId')}
-      />
       <Box padding="60px 0">
         {testData.content.map(v => (
           <GameHistoryItem key={v.matchId} data={v} />
