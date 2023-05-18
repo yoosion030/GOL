@@ -18,6 +18,7 @@ const SEOHelmet = ({ seoTitle, desc }: SEOHelmetProps) => {
       />
       <meta name="author" content="sionsijun" />
       <meta name="description" content={desc} />
+      <link rel="icon" href="/static/favicon.ico" />
 
       <meta name="og:title" content="GSM Of Legend" />
       <meta name="og:site_name" content="GSM Of Legend" />
