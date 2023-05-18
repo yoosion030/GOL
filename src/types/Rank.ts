@@ -6,7 +6,7 @@ export interface RankItemType {
 }
 
 export interface RankType {
-  rankType: string;
+  rankType: CategoryType;
   rankingNumber: number;
   rankValue: string;
   summonerResDto: {
@@ -54,3 +54,13 @@ export interface RankCategoryType {
   category: CategoryType;
   label: labelType;
 }
+
+export type TierType =
+  | 'BRONZE'
+  | 'SILVER'
+  | 'GOLD'
+  | 'PLATINUM'
+  | 'DIAMOND'
+  | 'MASTER'
+  | 'GRANDMASTER'
+  | 'CHALLENGER';

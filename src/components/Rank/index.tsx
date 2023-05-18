@@ -10,87 +10,6 @@ import { useState } from 'react';
 import { RankCategoryType, RankType } from 'types/Rank';
 
 const Rank = () => {
-  const data = [
-    {
-      nickname: '일이삼사오육칠팔구십일이삼사오육',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-    {
-      nickname: '롯데리아케찹도둑엄준식',
-      name: '3333 엄준식',
-      tier: 'sliver 3',
-      rank: '13연승',
-    },
-  ];
-
   const [category, setCategory] = useState<RankCategoryType>({
     category: 'TIER_RANKED_SOLO_5x5',
     label: '솔로랭크',
@@ -145,7 +64,7 @@ const Rank = () => {
         userDto: {
           id: '0823973e-1abc-4411-87a1-20bbec605086',
           email: 'Dummy1',
-          name: 'Dummy1',
+          name: '유시온',
           grade: 1,
           classNum: 1,
           num: 11,
