@@ -6,7 +6,7 @@ export interface MatchType {
   size: number;
   content: Content[];
   number: number;
-  sort: Sort;
+  sort: SortType;
   numberOfElements: number;
   pageable: Pageable;
   empty: boolean;
@@ -48,7 +48,7 @@ export interface Content {
   item6Uri: string;
 }
 
-export interface Sort {
+export interface SortType {
   empty: boolean;
   sorted: boolean;
   unsorted: boolean;
@@ -56,15 +56,9 @@ export interface Sort {
 
 export interface Pageable {
   offset: number;
-  sort: Sort2;
+  sort: SortType;
   paged: boolean;
   unpaged: boolean;
   pageNumber: number;
   pageSize: number;
-}
-
-export interface Sort2 {
-  empty: boolean;
-  sorted: boolean;
-  unsorted: boolean;
 }

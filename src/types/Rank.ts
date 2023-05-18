@@ -1,3 +1,5 @@
+import { UserDto } from './Summoner';
+
 export interface RankItemType {
   nickname: string;
   name: string;
@@ -19,18 +21,7 @@ export interface RankType {
     revisionDate: number;
     summonerLevel: number;
     isRegistered: boolean;
-    userDto: {
-      id: string;
-      email: string;
-      name: string;
-      grade: number;
-      classNum: number;
-      num: number;
-      gender: string;
-      profileUrl: string;
-      gAuthRole: string;
-      role: string;
-    };
+    userDto: UserDto;
   };
 }
 
