@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { css } from '@emotion/react';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
 import { SummonersInfo } from 'types/Info';
 import { useRandomCharacter, useMobileMediaQuery } from 'hooks';
 import styled from '@emotion/styled';
+import { formatProfileImage } from 'utils';
 
 const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
   const image = useRandomCharacter();
@@ -45,7 +46,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
         justifyContent="space-between"
       >
         <Image
-          src={`http://ddragon.leagueoflegends.com/cdn/13.10.1/img/profileicon/${profileIconId}.png`}
+          src={formatProfileImage(profileIconId)}
           alt=""
           width="80"
           height="80"
