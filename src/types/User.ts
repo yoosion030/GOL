@@ -1,6 +1,11 @@
 import { UserDto } from './Summoner';
 import { CategoryType } from './Rank';
 
+export interface TokenType {
+  accessToken: string;
+  refreshToken: string;
+}
+
 export type UserType = {
   rankType: CategoryType;
   rankingNumber: number;

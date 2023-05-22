@@ -5,31 +5,17 @@ import type {
   NextPage,
 } from 'next';
 import { useQuery } from 'react-query';
-import { instance } from 'config/Interceptor';
-import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { getLogin } from 'utils/auth';
 
-const LoginPage: NextPage<{ code: string }> = ({ code }: { code: string }) => {
+interface LoginPageProps {
+  code: string;
+}
+
+const LoginPage: NextPage<LoginPageProps> = ({ code }: LoginPageProps) => {
   const { push } = useRouter();
-  // Todo: useQuery 사용
-  const getData = async () => {
-    try {
-      const { data } = await instance.get(
-        `http://gsm-of-legends.p-e.kr/api/auth/v1/gauth/code?code=${code}`,
-      );
 
-      localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('refreshToken', data.refreshToken);
-
-      push('/info');
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, [code]);
+  useQuery('login', () => getLogin(code));
 
   return (
     <>
