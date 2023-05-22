@@ -8,7 +8,7 @@ export interface SummeonerType {
   revisionDate: number;
   summonerLevel: number;
   isRegistered: boolean;
-  userDto: UserDto;
+  userDto?: UserDto;
 }
 
 export interface UserDto {

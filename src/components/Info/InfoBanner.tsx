@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { css } from '@emotion/react';
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
 import { SummonersInfo } from 'types/Info';
 import { useRandomCharacter, useMobileMediaQuery } from 'hooks';
@@ -65,7 +65,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
             {nickname}
           </Text>
           <Text fontSize={palette.fontSize.content} color={palette.color.white}>
-            {name ?? '사용자 등록 필요'}
+            {name}
           </Text>
         </Flex>
       </Flex>

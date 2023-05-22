@@ -7,26 +7,25 @@ interface InfoProps {
 }
 
 const Info = ({ data }: InfoProps) => {
-  const { userDto } = data;
   const name = formatNameNumber(
-    userDto.grade,
-    userDto.classNum,
-    userDto.num,
-    userDto.name,
+    data.userDto?.grade,
+    data.userDto?.classNum,
+    data.userDto?.num,
+    data.userDto?.name,
   );
 
   return (
     <>
       <InfoBanner
         nickname={data?.name}
-        name={name}
-        profileIconId={data.profileIconId}
+        name={!data.isRegistered ? '사용자 등록 필요' : name}
+        profileIconId={data?.profileIconId}
       />
 
       {!data?.isRegistered ? (
         <RegisterForm accountId={data?.accountId} />
       ) : (
-        <GameHistory />
+        <GameHistory id={data.summonerApiId} />
       )}
     </>
   );
