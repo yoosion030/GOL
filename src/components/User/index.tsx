@@ -20,7 +20,7 @@ const User = () => {
 
   return (
     <PageLayout>
-      <TitleSection name="유시온" mode="user" />
+      <TitleSection name={data && data[0]?.userDto?.name} mode="user" />
       <Text
         fontWeight="700"
         marginBottom="20px"
