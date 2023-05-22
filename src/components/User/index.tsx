@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import { getSummeonerByUser } from 'utils/summeoner';
 
 const User = () => {
-  const { data } = useQuery('getUser', getSummeonerByUser);
+  const { data } = useQuery('getSummeonerByUser', getSummeonerByUser);
 
   return (
     <PageLayout>

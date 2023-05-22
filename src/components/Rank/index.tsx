@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-import { RankCategoryType, RankType } from 'types/Rank';
+import { RankCategoryType } from 'types/Rank';
 import { getRankByCategory } from 'utils/rank';
 
 const Rank = () => {
@@ -17,72 +17,9 @@ const Rank = () => {
     label: '솔로랭크',
   });
 
-  const testData: RankType[] = [
-    {
-      rankType: 'SUMMONER_LEVEL', // 랭킹 카테고리
-      rankingNumber: 1, // 순위
-      rankValue: '11', // 랭킹 값
-      summonerResDto: {
-        id: 'bca71793-ed25-49f5-b0dc-dec7699deb06',
-        summonerApiId:
-          '-YWoVxmeUI-MpR8YiM0UtRUcAwbYfG_ZwDjTrf5O1hR5re84DZ5u9uAxBA',
-        accountId: 'eXGT3kV7bOxG3j0_kfl8WY7l9_sAJp18e-fe9ZzrsIFtcznkqeV9uiuv',
-        puuid:
-          'pX1roodpuAb1soUN394FlIpYxPmXJyrsdWUYhQEEpM9SjT5sW-pKWhVXW09_3BusJyxAUQy7Z2n7-A',
-        name: 'Faker',
-        profileIconId: 6,
-        revisionDate: 1683082584000,
-        summonerLevel: 45,
-        isRegistered: true,
-        userDto: {
-          id: '1231eb33-964c-49a0-9141-e46aa0d2bec9',
-          email: 'Dummy2',
-          name: 'Dummy2',
-          grade: 2,
-          classNum: 2,
-          num: 22,
-          gender: 'Dummy2',
-          profileUrl: 'Dummy2',
-          gAuthRole: 'Dummy2',
-          role: 'ROLE_USER',
-        },
-      },
-    },
-    {
-      rankType: 'TIER_RANKED_SOLO_5x5',
-      rankingNumber: 2,
-      rankValue: 'RANKED_SOLO_5x5_GRANDMASTER_II_54',
-      summonerResDto: {
-        id: 'e31fc116-15da-49c9-a0ee-b7085f7f9145',
-        summonerApiId: 'DIiLDPb8BjQewHIbqm1adVUIAObCRiA-wHgAU7mKaGjRNgI',
-        accountId: 'Pkh25cyxBN_6RQF3qD9WZZ1azpFJj-cqWtsqpYEVe2zMz_g',
-        puuid:
-          'JRv9GZ1NllHPUY1DXqQZ66yWwbDNIdi8UDeOtW-4pFxPQMhr17Vc5x1yrhWFehSvyeP2sU3rWiSO2g',
-        name: '메추리 알빠노',
-        profileIconId: 5389,
-        revisionDate: 1683041620434,
-        summonerLevel: 2448,
-        isRegistered: true,
-        userDto: {
-          id: '0823973e-1abc-4411-87a1-20bbec605086',
-          email: 'Dummy1',
-          name: '유시온',
-          grade: 1,
-          classNum: 1,
-          num: 11,
-          gender: 'Dummy1',
-          profileUrl: 'Dummy1',
-          gAuthRole: 'Dummy1',
-          role: 'ROLE_USER',
-        },
-      },
-    },
-  ];
-
-  const { data } = useQuery('getRankByCategory', () =>
+  const { data } = useQuery(`getRankByCategory-${category.category}`, () =>
     getRankByCategory(category.category),
   );
-  console.log(data);
 
   return (
     <PageLayout>
