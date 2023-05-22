@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { instance } from 'config/Interceptor';
 
 export const registerSummeoner = async (accountId: string) => {
@@ -15,6 +14,7 @@ export const registerSummeoner = async (accountId: string) => {
         },
       },
     );
+    window.location.reload();
   } catch (e) {
     console.log(e);
   }
@@ -31,6 +31,7 @@ export const deleteSummeoner = async (accountId: string) => {
         Authorization: 'Bearer ' + accessToken,
       },
     });
+    window.location.reload();
   } catch (e) {
     console.log(e);
   }

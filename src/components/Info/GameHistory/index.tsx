@@ -3,10 +3,14 @@ import { useRouter } from 'next/router';
 import { GameHistoryItem } from 'components';
 import { Box } from '@chakra-ui/react';
 import { MatchType } from 'types/Match';
+import { instance } from 'config/Interceptor';
 
-const GameHistory = () => {
+interface GameHistoryProps {
+  id: string;
+}
+
+const GameHistory = ({ id }: GameHistoryProps) => {
   const router = useRouter();
-  const { nickname } = router.query;
   const testData: MatchType = {
     content: [
       {
@@ -123,8 +127,19 @@ const GameHistory = () => {
     empty: false,
   };
 
+  const getData = async () => {
+    const accessToken = window.localStorage.getItem('accessToken');
+    const { data } = await instance.get('api/match/v1/matches', {
+      headers: {
+        Authorization: 'Bearer ' + accessToken,
+      },
+      params: { summonerId: id },
+    });
+    console.log(data);
+  };
+
   useEffect(() => {
-    console.log(`${nickname}으로 데이터 요청`);
+    getData();
   }, []);
 
   return (

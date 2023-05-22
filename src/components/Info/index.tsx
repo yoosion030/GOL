@@ -25,7 +25,7 @@ const Info = ({ data }: InfoProps) => {
       {!data?.isRegistered ? (
         <RegisterForm accountId={data?.accountId} />
       ) : (
-        <GameHistory id={data.summonerApiId} />
+        <GameHistory id={data.id} />
       )}
     </>
   );
