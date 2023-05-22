@@ -1,20 +1,34 @@
 import axios from 'axios';
+import { instance } from 'config/Interceptor';
 
 export const registerSummeoner = async (accountId: string) => {
+  const accessToken = window.localStorage.getItem('accessToken');
   try {
-    await axios.post('http://localhost:8080/api/summoner/v1/summoner', {
-      accountId,
-    });
+    await instance.post(
+      'api/summoner/v1/summoner',
+      {
+        accountId,
+      },
+      {
+        headers: {
+          Authorization: 'Bearer ' + accessToken,
+        },
+      },
+    );
   } catch (e) {
     console.log(e);
   }
 };
 
 export const deleteSummeoner = async (accountId: string) => {
+  const accessToken = window.localStorage.getItem('accessToken');
   try {
-    await axios.delete('http://localhost:8080/api/summoner/v1/summoner', {
+    await instance.delete('api/summoner/v1/summoner', {
       data: {
         accountId,
+      },
+      headers: {
+        Authorization: 'Bearer ' + accessToken,
       },
     });
   } catch (e) {

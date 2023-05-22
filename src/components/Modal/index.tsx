@@ -15,6 +15,7 @@ interface ModalPropsType {
   modalContent: string;
   mode: string;
   colorScheme: 'red' | 'main';
+  success: () => void;
 }
 
 const ModalContainer = ({
@@ -24,6 +25,7 @@ const ModalContainer = ({
   modalContent,
   mode,
   colorScheme,
+  success,
 }: ModalPropsType) => {
   const [isMobile] = useMobileMediaQuery();
 
@@ -81,6 +83,7 @@ const ModalContainer = ({
             backgroundColor={palette.color[colorScheme]}
             borderRadius="10px"
             colorScheme={colorScheme === 'main' ? 'blue' : colorScheme}
+            onClick={success}
           >
             {mode}
           </Button>

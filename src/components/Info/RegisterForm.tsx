@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Modal, PageLayout } from 'components';
-import { registerSummeoner } from 'utils/Summeoner';
+import { registerSummeoner } from 'utils/summeoner';
 import { Button, Text } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
 
