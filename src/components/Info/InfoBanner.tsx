@@ -42,7 +42,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
       <Flex
         position="relative"
         zIndex="5"
-        padding="14vh 2.7vh 0"
+        padding={isMobile ? '9rem 1.875rem 0' : '10rem 1.875rem 0'}
         justifyContent="space-between"
       >
         <Image
@@ -54,7 +54,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
             border-radius: 10px;
           `}
         />
-        <Flex flexDir="column" width="30vh" gap="10px">
+        <Flex flexDir="column" width="75%" gap="10px">
           <Text
             fontSize={
               isMobile ? palette.fontSize.mobileTitle : palette.fontSize.title
@@ -75,7 +75,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
 
 export const InfoBannerContainer = styled.div`
   width: 100%;
-  height: 25vh;
+  height: 17.5rem;
   position: relative;
   img {
     filter: brightness(80%);

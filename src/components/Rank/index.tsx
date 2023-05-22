@@ -29,9 +29,9 @@ const Rank = () => {
     <PageLayout>
       <TitleSection mode="rank" />
       <SelectCategory onChangeCategory={setCategory} />
-      <Box overflow="scroll" height="80vh" position="relative">
+      <Box overflow="scroll" height="55.5rem" position="relative">
         <RankHeader label={category.label} />
-        <Box padding="0px 0 20vh">
+        <Box padding="0px 0 13.875rem">
           {data?.length === 0 ? (
             <NonData title="랭킹 정보가 없습니다." />
           ) : (

@@ -23,9 +23,14 @@ const RankItem = ({
   );
 
   const rank = formatRank(rankType, rankValue);
-  console.log(rank);
+
   return (
-    <Flex width="100%" alignItems="center" height="6.7vh" padding="0 1vh">
+    <Flex
+      width="100%"
+      alignItems="center"
+      height="4.688rem"
+      padding="0 0.75rem"
+    >
       <Text
         fontSize={
           isMobile ? palette.fontSize.smallTitle : palette.fontSize.medium
@@ -38,7 +43,7 @@ const RankItem = ({
         {rankingNumber}
       </Text>
 
-      <Flex height="4.5vh" gap="20px" alignItems="center">
+      <Flex height="3.125rem" gap="20px" alignItems="center">
         <Image
           src={`http://ddragon.leagueoflegends.com/cdn/13.10.1/img/profileicon/${summonerResDto.profileIconId}.png`}
           alt=""
@@ -67,7 +72,7 @@ const RankItem = ({
       </Flex>
       <Flex
         flexDir="column"
-        height="4.5vh"
+        height="3.125rem"
         justifyContent="space-between"
         alignItems="flex-end"
         marginLeft="auto"

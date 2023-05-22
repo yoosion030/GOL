@@ -14,7 +14,7 @@ const RankHeader = ({ label }: { label: labelType }) => {
       color="#666666"
       borderRadius="10px"
       backdropFilter=" blur(10px)"
-      padding="0 1vh"
+      padding="0 0.75rem"
     >
       <Text width="10%" textAlign="center" marginRight="15px">
         순위

@@ -11,7 +11,7 @@ const Login = () => {
       color={palette.color.white}
       width="80%"
       justifyContent="center"
-      height="70vh"
+      height="70%"
       margin="0 auto"
     >
       <I.Logo />

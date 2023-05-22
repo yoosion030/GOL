@@ -34,11 +34,11 @@ const ModalContainer = ({
       <ModalOverlay backgroundColor="rgba(0, 0, 0, 0.24)" />
       <ModalContent
         display="flex"
-        width="36vh"
-        height="23vh"
+        width="25rem"
+        height="16.25rem"
         backgroundColor={palette.color.white}
         borderRadius="32px"
-        padding="3.5vh 3.5vh 2.8vh"
+        padding="2.5rem 2.5rem 1.875rem"
         flexDir="column"
         justifyContent="space-between"
       >
@@ -60,7 +60,7 @@ const ModalContainer = ({
         >
           {modalContent}
         </Text>
-        <Flex justifyContent="space-between" height="4.5vh">
+        <Flex justifyContent="space-between" height="25%">
           <Button
             width="45%"
             height="100%"
