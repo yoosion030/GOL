@@ -1,4 +1,4 @@
-import { GameHistoryItem, NonData } from 'components';
+import { GameHistoryItem, NonData, Loading } from 'components';
 import { Box } from '@chakra-ui/react';
 import { useQuery } from 'react-query';
 import { getGameHistory } from 'utils/match';
@@ -8,8 +8,11 @@ interface GameHistoryProps {
 }
 
 const GameHistory = ({ id }: GameHistoryProps) => {
-  const { data } = useQuery('getGameHistory', () => getGameHistory(id));
+  const { data, isLoading } = useQuery('getGameHistory', () =>
+    getGameHistory(id),
+  );
 
+  if (isLoading) return <Loading />;
   return (
     <>
       <Box padding="60px 0">

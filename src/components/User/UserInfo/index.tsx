@@ -7,6 +7,7 @@ import { formatProfileImage } from 'utils';
 import { css } from '@emotion/react';
 import { SummeonerType } from 'types/Summoner';
 import { palette } from 'shared/styles/Palette';
+import Link from 'next/link';
 
 const UserInfo = ({ data }: { data: SummeonerType }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -24,7 +25,7 @@ const UserInfo = ({ data }: { data: SummeonerType }) => {
         alt=""
       />
       <Text flex="1" fontWeight="500">
-        {data?.name}
+        <Link href={`info/${data.name}`}>{data?.name}</Link>
       </Text>
       <Button
         onClick={() => setIsDeleteModalOpen(true)}

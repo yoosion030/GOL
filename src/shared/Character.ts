@@ -9,7 +9,7 @@ export const Character = [
 
 export const Feeling = [
   'AngryBee',
-  'AngryRabbitwen',
+  'AngryRabbit',
   'ColdRabbit',
   'FunPenguin',
   'HappyBee',

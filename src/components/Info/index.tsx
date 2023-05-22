@@ -1,12 +1,14 @@
-import { GameHistory, InfoBanner, RegisterForm } from 'components';
+import { GameHistory, InfoBanner, Loading, RegisterForm } from 'components';
 import { useQuery } from 'react-query';
 import { formatNameNumber } from 'utils';
 import { getSummeonerByName } from 'utils/summeoner';
 
 const Info = ({ nickname }: { nickname: string }) => {
-  const { data } = useQuery('getSummeonerByName', () =>
+  const { data, isLoading } = useQuery('getSummeonerByName', () =>
     getSummeonerByName(nickname),
   );
+
+  if (isLoading) return <Loading />;
 
   const name = formatNameNumber(
     data?.userDto?.grade,

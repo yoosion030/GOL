@@ -6,6 +6,7 @@ import {
   SelectCategory,
   TitleSection,
   NonData,
+  Loading,
 } from 'components';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
@@ -18,10 +19,12 @@ const Rank = () => {
     label: '솔로랭크',
   });
 
-  const { data } = useQuery(`getRankByCategory-${category.category}`, () =>
-    getRankByCategory(category.category),
+  const { data, isLoading } = useQuery(
+    `getRankByCategory-${category.category}`,
+    () => getRankByCategory(category.category),
   );
 
+  if (isLoading) return <Loading />;
   return (
     <PageLayout>
       <TitleSection mode="rank" />
