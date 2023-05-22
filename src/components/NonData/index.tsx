@@ -15,9 +15,8 @@ const NonData = ({ title }: NonDataProps) => {
       justifyContent="center"
       alignItems="center"
       gap="30px"
-      paddingTop="40px"
+      paddingTop="100px"
     >
-      <Text fontWeight="700">{title}</Text>
       <Image
         src={`/Feeling/${image}.png`}
         alt=""
@@ -26,6 +25,7 @@ const NonData = ({ title }: NonDataProps) => {
         width="200"
         height="200"
       />
+      <Text fontWeight="700">{title}</Text>
     </Flex>
   );
 };
