@@ -1,16 +1,15 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { GameHistoryItem } from 'components';
-import { Box } from '@chakra-ui/react';
+import { GameHistoryItem, PageLayout } from 'components';
+import { Box, Text } from '@chakra-ui/react';
 import { MatchType } from 'types/Match';
 import { instance } from 'config/Interceptor';
+import { useQuery } from 'react-query';
+import { AxiosResponse } from 'axios';
 
 interface GameHistoryProps {
   id: string;
 }
 
 const GameHistory = ({ id }: GameHistoryProps) => {
-  const router = useRouter();
   const testData: MatchType = {
     content: [
       {
@@ -127,27 +126,28 @@ const GameHistory = ({ id }: GameHistoryProps) => {
     empty: false,
   };
 
-  const getData = async () => {
+  const getData = async (): Promise<AxiosResponse<MatchType>> => {
     const accessToken = window.localStorage.getItem('accessToken');
-    const { data } = await instance.get('api/match/v1/matches', {
+    return instance.get<MatchType>('api/match/v1/matches', {
       headers: {
         Authorization: 'Bearer ' + accessToken,
       },
       params: { summonerId: id },
     });
-    console.log(data);
   };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+  const { data } = useQuery('', getData);
   return (
     <>
       <Box padding="60px 0">
-        {testData.content.map(v => (
-          <GameHistoryItem key={v.matchId} data={v} />
-        ))}
+        {data?.data.content.length === 0 ? (
+          <PageLayout>
+            <Text fontWeight="700">플레이한 게임이 없습니다.</Text>
+          </PageLayout>
+        ) : (
+          data?.data.content.map(v => (
+            <GameHistoryItem key={v.matchId} data={v} />
+          ))
+        )}
       </Box>
     </>
   );
