@@ -4,22 +4,20 @@ import type {
   NextPage,
 } from 'next';
 import { Info, SEOHelmet } from 'components';
-import { SummonersInfo } from 'types/Info';
+import { SummeonerType } from 'types/Summoner';
+import { instance } from 'config/Interceptor';
 
 interface InfoPageProps {
-  nickname: string;
+  data: SummeonerType;
 }
 
-const InfoPage: NextPage<InfoPageProps> = ({ nickname }: InfoPageProps) => {
-  const data: SummonersInfo = {
-    nickname: nickname,
-    name: '3333 엄준식',
-  };
+const InfoPage: NextPage<InfoPageProps> = ({ data }: InfoPageProps) => {
+  console.log(data);
 
   return (
     <>
       <SEOHelmet seoTitle="전적" desc="닉네임으로 전적을 검색합니다." />
-      <Info {...data} />
+      <Info data={data} />
     </>
   );
 };
@@ -28,11 +26,19 @@ export const getServerSideProps: GetServerSideProps = async ({
   params,
 }: GetServerSidePropsContext) => {
   const nickname = params?.nickname;
-  console.log(`nickname으로 데이터 요청`);
+  try {
+    const { data } = await instance.get(
+      `http://gsm-of-legends.p-e.kr/api/summoner/v1/summoner/by-name/${nickname}`,
+    );
 
-  return {
-    props: { nickname },
-  };
+    return {
+      props: { data },
+    };
+  } catch (e) {
+    return {
+      props: {},
+    };
+  }
 };
 
 export default InfoPage;
