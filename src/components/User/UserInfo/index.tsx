@@ -6,26 +6,31 @@ import Image from 'next/image';
 import { formatProfileImage } from 'utils';
 import { css } from '@emotion/react';
 import { SummeonerType } from 'types/Summoner';
+import { palette } from 'shared/styles/Palette';
 
 const UserInfo = ({ data }: { data: SummeonerType }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   return (
-    <Flex alignItems="center">
+    <Flex alignItems="center" height="70px" justifyContent="space-between">
       <Image
         src={formatProfileImage(data?.profileIconId)}
         width="50"
         height="50"
         css={css`
           border-radius: 50%;
+          margin-right: 10px;
         `}
         alt=""
       />
-      <Text>{data?.name}</Text>
+      <Text flex="1" fontWeight="500">
+        {data?.name}
+      </Text>
       <Button
         onClick={() => setIsDeleteModalOpen(true)}
         colorScheme="red"
-        width="250px"
+        width="100px"
+        fontSize={palette.fontSize.content}
       >
         등록 해제하기
       </Button>
