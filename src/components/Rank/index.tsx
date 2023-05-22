@@ -7,7 +7,9 @@ import {
   TitleSection,
 } from 'components';
 import { useState } from 'react';
+import { useQuery } from 'react-query';
 import { RankCategoryType, RankType } from 'types/Rank';
+import { getRankByCategory } from 'utils/rank';
 
 const Rank = () => {
   const [category, setCategory] = useState<RankCategoryType>({
@@ -76,7 +78,12 @@ const Rank = () => {
       },
     },
   ];
-  console.log(category);
+
+  const { data } = useQuery('getRankByCategory', () =>
+    getRankByCategory(category.category),
+  );
+  console.log(data);
+
   return (
     <PageLayout>
       <TitleSection mode="rank" />
@@ -84,8 +91,8 @@ const Rank = () => {
       <Box overflow="scroll" height="80vh" position="relative">
         <RankHeader label={category.label} />
         <Box padding="0px 0 20vh">
-          {testData.map(data => (
-            <RankItem data={data} key={data.summonerResDto.accountId} />
+          {data?.map(rank => (
+            <RankItem data={rank} key={rank.summonerResDto.accountId} />
           ))}
         </Box>
       </Box>
