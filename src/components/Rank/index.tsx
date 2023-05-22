@@ -5,6 +5,7 @@ import {
   RankItem,
   SelectCategory,
   TitleSection,
+  NonData,
 } from 'components';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
@@ -29,7 +30,7 @@ const Rank = () => {
         <RankHeader label={category.label} />
         <Box padding="0px 0 20vh">
           {data?.length === 0 ? (
-            <div>없음</div>
+            <NonData title="랭킹 정보가 없습니다." />
           ) : (
             data?.map(rank => (
               <RankItem data={rank} key={rank.summonerResDto.accountId} />

@@ -1,4 +1,4 @@
-import { GameHistoryItem, PageLayout } from 'components';
+import { GameHistoryItem, NonData, PageLayout } from 'components';
 import { Box, Text } from '@chakra-ui/react';
 import { useQuery } from 'react-query';
 import { getGameHistory } from 'utils/match';
@@ -14,9 +14,7 @@ const GameHistory = ({ id }: GameHistoryProps) => {
     <>
       <Box padding="60px 0">
         {data?.data.content.length === 0 ? (
-          <PageLayout>
-            <Text fontWeight="700">플레이한 게임이 없습니다.</Text>
-          </PageLayout>
+          <NonData title="플레이 전적이 없습니다." />
         ) : (
           data?.data.content.map(v => (
             <GameHistoryItem key={v.matchId} data={v} />
