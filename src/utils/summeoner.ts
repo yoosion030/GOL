@@ -1,6 +1,19 @@
 import { instance } from 'config/Interceptor';
 import { SummeonerType } from 'types/Summoner';
 
+export const getSummeonerByName = async (nickname: string) => {
+  try {
+    const { data } = await instance.get<SummeonerType>(
+      `http://gsm-of-legends.p-e.kr/api/summoner/v1/summoner/by-name/${nickname}`,
+    );
+
+    return data;
+  } catch (e) {
+    window.location.replace('/info');
+    console.log(e);
+  }
+};
+
 export const getSummeonerByUser = async () => {
   try {
     const accessToken = window.localStorage.getItem('accessToken');
@@ -18,7 +31,7 @@ export const getSummeonerByUser = async () => {
   }
 };
 
-export const registerSummeoner = async (accountId: string) => {
+export const registerSummeoner = async (accountId?: string) => {
   const accessToken = window.localStorage.getItem('accessToken');
   try {
     await instance.post(

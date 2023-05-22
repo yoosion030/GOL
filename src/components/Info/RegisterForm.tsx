@@ -4,7 +4,11 @@ import { registerSummeoner } from 'utils/summeoner';
 import { Button, Text } from '@chakra-ui/react';
 import { palette } from 'shared/styles/Palette';
 
-const RegisterForm = ({ accountId }: { accountId: string }) => {
+interface RegisterFormProps {
+  accountId?: string;
+}
+
+const RegisterForm = ({ accountId }: RegisterFormProps) => {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
   return (

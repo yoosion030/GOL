@@ -28,9 +28,13 @@ const Rank = () => {
       <Box overflow="scroll" height="80vh" position="relative">
         <RankHeader label={category.label} />
         <Box padding="0px 0 20vh">
-          {data?.map(rank => (
-            <RankItem data={rank} key={rank.summonerResDto.accountId} />
-          ))}
+          {data?.length === 0 ? (
+            <div>없음</div>
+          ) : (
+            data?.map(rank => (
+              <RankItem data={rank} key={rank.summonerResDto.accountId} />
+            ))
+          )}
         </Box>
       </Box>
     </PageLayout>

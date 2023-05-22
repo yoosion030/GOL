@@ -1,24 +1,25 @@
 import { GameHistory, InfoBanner, RegisterForm } from 'components';
-import { SummeonerType } from 'types/Summoner';
+import { useQuery } from 'react-query';
 import { formatNameNumber } from 'utils';
+import { getSummeonerByName } from 'utils/summeoner';
 
-interface InfoProps {
-  data: SummeonerType;
-}
+const Info = ({ nickname }: { nickname: string }) => {
+  const { data } = useQuery('getSummeonerByName', () =>
+    getSummeonerByName(nickname),
+  );
 
-const Info = ({ data }: InfoProps) => {
   const name = formatNameNumber(
-    data.userDto?.grade,
-    data.userDto?.classNum,
-    data.userDto?.num,
-    data.userDto?.name,
+    data?.userDto?.grade,
+    data?.userDto?.classNum,
+    data?.userDto?.num,
+    data?.userDto?.name,
   );
 
   return (
     <>
       <InfoBanner
         nickname={data?.name}
-        name={!data.isRegistered ? '사용자 등록 필요' : name}
+        name={!data?.isRegistered ? '사용자 등록 필요' : name}
         profileIconId={data?.profileIconId}
       />
 
