@@ -4,16 +4,16 @@ import { deleteSummeoner } from 'utils/summeoner';
 import { useState } from 'react';
 import Image from 'next/image';
 import { formatProfileImage } from 'utils';
-import { UserType } from 'types/User';
 import { css } from '@emotion/react';
+import { SummeonerType } from 'types/Summoner';
 
-const UserInfo = ({ data }: { data: UserType }) => {
+const UserInfo = ({ data }: { data: SummeonerType }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   return (
     <Flex alignItems="center">
       <Image
-        src={formatProfileImage(data.summonerResDto.profileIconId)}
+        src={formatProfileImage(data?.profileIconId)}
         width="50"
         height="50"
         css={css`
@@ -21,7 +21,7 @@ const UserInfo = ({ data }: { data: UserType }) => {
         `}
         alt=""
       />
-      <Text>{data.summonerResDto.name}</Text>
+      <Text>{data?.name}</Text>
       <Button
         onClick={() => setIsDeleteModalOpen(true)}
         colorScheme="red"
@@ -36,7 +36,7 @@ const UserInfo = ({ data }: { data: UserType }) => {
         modalContent={`등록 해제 시 모든 기록이 삭제됩니다. \n정말로 등록 해제를 진행하시겠습니까? \n이 작업은 되돌릴 수 없습니다.`}
         mode="해제"
         colorScheme="red"
-        success={() => deleteSummeoner(data.summonerResDto.accountId)}
+        success={() => deleteSummeoner(data?.accountId)}
       />
     </Flex>
   );

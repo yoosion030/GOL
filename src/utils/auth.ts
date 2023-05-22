@@ -1,5 +1,5 @@
 import { instance } from 'config/Interceptor';
-import { TokenType } from 'types/User';
+import { TokenType } from 'types/Auth';
 
 export const getLogin = async (code: string) => {
   try {

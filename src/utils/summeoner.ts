@@ -1,4 +1,22 @@
 import { instance } from 'config/Interceptor';
+import { SummeonerType } from 'types/Summoner';
+
+export const getSummeonerByUser = async () => {
+  try {
+    const accessToken = window.localStorage.getItem('accessToken');
+    const { data } = await instance.get<SummeonerType[]>(
+      '/api/summoner/v1/summoners/by-user',
+      {
+        headers: {
+          Authorization: 'Bearer ' + accessToken,
+        },
+      },
+    );
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const registerSummeoner = async (accountId: string) => {
   const accessToken = window.localStorage.getItem('accessToken');
