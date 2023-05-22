@@ -1,18 +1,10 @@
-import { PageLayout } from 'components';
-import { useEffect } from 'react';
-import SearchBanner from './SearchBanner';
-import Slide from './Slide';
+import { PageLayout, SearchBanner, Slide } from 'components';
 
 const Search = () => {
-  useEffect(() => {
-    console.log('slide api 받아오기')
-  }, [])
   return (
     <>
       <SearchBanner />
-      <PageLayout>
-        <Slide />
-      </PageLayout>
+      <PageLayout>{/* <Slide /> */}</PageLayout>
     </>
   );
 };

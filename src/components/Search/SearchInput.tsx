@@ -3,12 +3,14 @@ import { palette } from 'shared/styles/Palette';
 import { useForm } from 'react-hook-form';
 import * as I from 'assets';
 import { useRouter } from 'next/router';
+import { useMobileMediaQuery } from 'hooks';
 
 interface SearchType {
   nickname: string;
 }
 
 const SearchInput = () => {
+  const [isMobile] = useMobileMediaQuery();
   const { register, handleSubmit } = useForm<SearchType>();
   const { push } = useRouter();
 
@@ -22,21 +24,22 @@ const SearchInput = () => {
       alignItems="center"
       width="100%"
       position="absolute"
-      top="16vh"
-      padding="0 35px"
+      top={isMobile ? '12rem' : '11.1rem'}
+      padding="0 2.188rem"
       as="form"
       onSubmit={handleSubmit(handleSearch)}
     >
       <Input
+        margin="0 auto"
         placeholder="소환사 명을 입력해주세요."
-        width="431px"
-        height="4.5vh"
+        width="26.938rem"
+        height={isMobile ? '3.5rem' : '3.125rem'}
         fontSize={palette.fontSize.content}
         variant="unstyled"
-        borderRadius="48px"
+        borderRadius="3rem"
         background="rgba(255, 255, 255, 0.5)"
         backdropFilter="blur(4px)"
-        padding="0 26px"
+        padding="0 2.625rem"
         color="#000000"
         _placeholder={{ color: 'rgba(0, 0, 0, 0.5)' }}
         {...register('nickname', {
@@ -51,7 +54,7 @@ const SearchInput = () => {
         position="absolute"
         fill="rgba(255, 255, 255, 0.6)"
         zIndex="5"
-        marginRight="26px"
+        marginRight={isMobile ? '2.5rem' : '1.625rem'}
         cursor="pointer"
         as="button"
       >

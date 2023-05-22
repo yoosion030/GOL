@@ -1,12 +1,17 @@
 import { css, Global } from '@emotion/react';
 import emotionReset from 'emotion-reset';
-import { palette } from './Palette';
+import { useMobileMediaQuery } from 'hooks';
 
 export function GlobalStyle() {
+  const [isMobile] = useMobileMediaQuery();
   return (
     <Global
       styles={css`
         ${emotionReset}
+
+        html {
+          font-size: ${isMobile ? '12px' : '16px'};
+        }
 
         body {
           font-family: 'Noto Sans KR', sans-serif;

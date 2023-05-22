@@ -12,23 +12,23 @@ const GameHistoryItem = ({ data }: { data: Content }) => {
     <>
       <Flex
         width="100%"
-        height="9vh"
+        height="6.250rem"
         backgroundColor={data.win ? '#E8F7FF' : '#FFE8E8'}
         borderBottom={`0.5px solid ${palette.color.gray}`}
       >
         <Box
-          width="9px"
+          width="0.625rem"
           height="100%"
           backgroundColor={data.win ? '#5653C2' : '#C25353'}
-          borderRadius="0 10px 10px 0 "
+          borderRadius="0 0.625rem 0.625rem 0 "
         />
         <Flex
-          padding=" 0 33px"
+          padding=" 0 2.063rem"
           flex="1"
           justifyContent="space-between"
           alignItems="center"
         >
-          <Flex gap="7px" alignItems="center">
+          <Flex gap="0.438rem" alignItems="center">
             <Box position="relative">
               <Image
                 width="55"

@@ -4,6 +4,7 @@ export { default as ItemImage } from './Info/GameHistory/ItemImage';
 export { default as TabBar } from './TabBar';
 export { default as SearchBanner } from './Search/SearchBanner';
 export { default as SearchInput } from './Search/SearchInput';
+export { default as Slide } from './Search/Slide';
 export { default as InfoBanner } from './Info/InfoBanner';
 export { default as GameHistory } from './Info/GameHistory';
 export { default as GameHistoryItem } from './Info/GameHistory/GameHistoryItem';

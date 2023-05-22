@@ -2,7 +2,8 @@ import Image from 'next/image';
 import { Box, Flex } from '@chakra-ui/react';
 import useRandomBackground from 'hooks/useRandomCharacter';
 import * as I from 'assets';
-import SearchInput from './SearchInput';
+import { SearchInput } from 'components';
+import { css } from '@emotion/react';
 
 const SearchBanner = () => {
   const image = useRandomBackground();
@@ -16,7 +17,9 @@ const SearchBanner = () => {
         height="280"
         placeholder="blur"
         blurDataURL={`/Character/${image}.png`}
-        style={{ filter: 'brightness(40%)' }}
+        css={css`
+          filter: brightness(40%);
+        `}
       />
       <Box filter="none" position="absolute" zIndex="100">
         <I.Logo />
