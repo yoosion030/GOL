@@ -24,14 +24,14 @@ const Rank = () => {
     () => getRankByCategory(category.category),
   );
 
-  if (isLoading) return <Loading />;
   return (
     <PageLayout>
       <TitleSection mode="rank" />
       <SelectCategory onChangeCategory={setCategory} />
       <Box overflow="scroll" height="55.5rem" position="relative">
         <RankHeader label={category.label} />
-        <Box padding="0px 0 13.875rem">
+        <Box padding="100px 0 13.875rem">
+          {isLoading && <Loading />}
           {data?.length === 0 ? (
             <NonData title="랭킹 정보가 없습니다." />
           ) : (

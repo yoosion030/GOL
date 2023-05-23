@@ -7,11 +7,11 @@ export const palette = {
     white: '#ffffff',
   },
   fontSize: {
-    title: '32px',
-    smallTitle: '16px',
-    medium: '20px',
-    content: '12px',
-    smallContent: '10px',
-    mobileTitle: '24px',
+    title: '2rem',
+    smallTitle: '1rem',
+    medium: '1.25rem',
+    content: '0.75rem',
+    smallContent: '0.625rem',
+    mobileTitle: '1.5rem',
   },
 } as const;

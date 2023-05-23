@@ -15,7 +15,6 @@ const NonData = ({ title }: NonDataProps) => {
       justifyContent="center"
       alignItems="center"
       gap="30px"
-      paddingTop="100px"
     >
       <Image
         src={`/Feeling/${image}.png`}

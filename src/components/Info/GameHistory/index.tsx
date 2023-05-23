@@ -8,11 +8,8 @@ interface GameHistoryProps {
 }
 
 const GameHistory = ({ id }: GameHistoryProps) => {
-  const { data, isLoading } = useQuery('getGameHistory', () =>
-    getGameHistory(id),
-  );
+  const { data } = useQuery('getGameHistory', () => getGameHistory(id));
 
-  if (isLoading) return <Loading />;
   return (
     <>
       <Box padding="60px 0">

@@ -29,9 +29,10 @@ const UserInfo = ({ data }: { data: SummeonerType }) => {
       </Text>
       <Button
         onClick={() => setIsDeleteModalOpen(true)}
+        width="6.25rem"
+        fontSize="0.8rem"
+        height="2.5rem"
         colorScheme="red"
-        width="100px"
-        fontSize={palette.fontSize.content}
       >
         등록 해제하기
       </Button>

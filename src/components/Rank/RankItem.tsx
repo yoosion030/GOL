@@ -32,9 +32,7 @@ const RankItem = ({
       padding="0 0.75rem"
     >
       <Text
-        fontSize={
-          isMobile ? palette.fontSize.smallTitle : palette.fontSize.medium
-        }
+        fontSize={palette.fontSize.medium}
         color={palette.color.main}
         width="10%"
         textAlign="center"
@@ -54,12 +52,7 @@ const RankItem = ({
           `}
         />
         <Flex flexDir="column" justifyContent="space-between" height="100%">
-          <Text
-            fontSize={
-              isMobile ? palette.fontSize.content : palette.fontSize.smallTitle
-            }
-            fontWeight="700"
-          >
+          <Text fontSize={palette.fontSize.smallTitle} fontWeight="700">
             {summonerResDto.name}
           </Text>
           <Text
@@ -77,12 +70,7 @@ const RankItem = ({
         alignItems="flex-end"
         marginLeft="auto"
       >
-        <Text
-          color={palette.color.red}
-          fontSize={
-            isMobile ? palette.fontSize.content : palette.fontSize.smallTitle
-          }
-        >
+        <Text color={palette.color.red} fontSize={palette.fontSize.smallTitle}>
           {rank}
         </Text>
         <Link href={`/info/${summonerResDto.name}`}>

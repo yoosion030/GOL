@@ -56,9 +56,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
         />
         <Flex flexDir="column" width="75%" gap="10px">
           <Text
-            fontSize={
-              isMobile ? palette.fontSize.mobileTitle : palette.fontSize.title
-            }
+            fontSize={palette.fontSize.title}
             color={palette.color.white}
             fontWeight="700"
           >

@@ -1,5 +1,4 @@
 import { Flex, Text } from '@chakra-ui/react';
-import { useMobileMediaQuery } from 'hooks';
 import Link from 'next/link';
 import { palette } from 'shared/styles/Palette';
 
@@ -10,17 +9,10 @@ interface TitleSectionProps {
   mode: 'user' | 'rank';
 }
 
-const TitleSection = ({ name, mode }: TitleSectionProps) => {
-  const [isMobile] = useMobileMediaQuery();
-
+const TitleSection = ({ name = '', mode }: TitleSectionProps) => {
   return (
     <Flex flexDir="column" marginBottom="40px">
-      <Text
-        fontSize={
-          isMobile ? palette.fontSize.mobileTitle : palette.fontSize.title
-        }
-        fontWeight="700"
-      >
+      <Text fontSize={palette.fontSize.title} fontWeight="700">
         {mode === 'rank' ? 'GSM 랭크' : `${name}님의 소환사 정보입니다!`}
       </Text>
       <Text fontSize={palette.fontSize.content} lineHeight="40px">

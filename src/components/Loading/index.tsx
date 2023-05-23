@@ -11,7 +11,7 @@ const Loading = () => {
       justifyContent="center"
       alignItems="center"
       gap="30px"
-      height="100vh"
+      height="100%"
     >
       <Image
         src={`/Feeling/${image}.png`}

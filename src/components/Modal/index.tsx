@@ -42,19 +42,12 @@ const ModalContainer = ({
         flexDir="column"
         justifyContent="space-between"
       >
-        <Text
-          fontSize={
-            isMobile ? palette.fontSize.smallTitle : palette.fontSize.medium
-          }
-          fontWeight="700"
-        >
+        <Text fontSize={palette.fontSize.medium} fontWeight="700">
           {modalTitle}
         </Text>
         <Text
           color={palette.color.gray}
-          fontSize={
-            isMobile ? palette.fontSize.content : palette.fontSize.smallTitle
-          }
+          fontSize={palette.fontSize.smallTitle}
           lineHeight={isMobile ? '20px' : '24px'}
           whiteSpace="pre-wrap"
         >
@@ -64,9 +57,7 @@ const ModalContainer = ({
           <Button
             width="45%"
             height="100%"
-            fontSize={
-              isMobile ? palette.fontSize.content : palette.fontSize.smallTitle
-            }
+            fontSize={palette.fontSize.smallTitle}
             color={palette.color[colorScheme]}
             onClick={onClose}
             borderRadius="10px"
@@ -76,9 +67,7 @@ const ModalContainer = ({
           <Button
             width="45%"
             height="100%"
-            fontSize={
-              isMobile ? palette.fontSize.content : palette.fontSize.smallTitle
-            }
+            fontSize={palette.fontSize.smallTitle}
             color={palette.color.white}
             backgroundColor={palette.color[colorScheme]}
             borderRadius="10px"
