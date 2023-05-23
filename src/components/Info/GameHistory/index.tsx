@@ -12,7 +12,7 @@ const GameHistory = ({ id }: GameHistoryProps) => {
 
   return (
     <>
-      <Box padding="60px 0">
+      <Box padding="3.75rem 0">
         {data?.content.length === 0 ? (
           <NonData title="플레이 전적이 없습니다." />
         ) : (

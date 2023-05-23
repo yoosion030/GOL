@@ -37,7 +37,7 @@ const ModalContainer = ({
         width="25rem"
         height="16.25rem"
         backgroundColor={palette.color.white}
-        borderRadius="32px"
+        borderRadius="2rem"
         padding="2.5rem 2.5rem 1.875rem"
         flexDir="column"
         justifyContent="space-between"
@@ -48,7 +48,7 @@ const ModalContainer = ({
         <Text
           color={palette.color.gray}
           fontSize={palette.fontSize.smallTitle}
-          lineHeight={isMobile ? '20px' : '24px'}
+          lineHeight="1.5rem"
           whiteSpace="pre-wrap"
         >
           {modalContent}
@@ -60,7 +60,7 @@ const ModalContainer = ({
             fontSize={palette.fontSize.smallTitle}
             color={palette.color[colorScheme]}
             onClick={onClose}
-            borderRadius="10px"
+            borderRadius="0.625rem"
           >
             취소
           </Button>
@@ -70,7 +70,7 @@ const ModalContainer = ({
             fontSize={palette.fontSize.smallTitle}
             color={palette.color.white}
             backgroundColor={palette.color[colorScheme]}
-            borderRadius="10px"
+            borderRadius="0.625rem"
             colorScheme={colorScheme === 'main' ? 'blue' : colorScheme}
             onClick={success}
           >

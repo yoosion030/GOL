@@ -6,21 +6,20 @@ import Image from 'next/image';
 import { formatProfileImage } from 'utils';
 import { css } from '@emotion/react';
 import { SummeonerType } from 'types/Summoner';
-import { palette } from 'shared/styles/Palette';
 import Link from 'next/link';
 
 const UserInfo = ({ data }: { data: SummeonerType }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   return (
-    <Flex alignItems="center" height="70px" justifyContent="space-between">
+    <Flex alignItems="center" height="4.375rem" justifyContent="space-between">
       <Image
         src={formatProfileImage(data?.profileIconId)}
         width="50"
         height="50"
         css={css`
           border-radius: 50%;
-          margin-right: 10px;
+          margin-right: 0.625rem;
         `}
         alt=""
       />

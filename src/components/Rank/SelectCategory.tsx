@@ -48,9 +48,9 @@ const Select = styled.select`
   cursor: pointer;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 15px;
   text-align: center;
-  width: 70px;
-  margin-bottom: 20px;
+  width: 4.375rem;
+  margin-bottom: 1.25rem;
 `;

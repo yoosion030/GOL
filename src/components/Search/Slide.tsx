@@ -9,9 +9,9 @@ const Slide = () => {
       backgroundColor="red"
       height={isMobile ? '430px' : '500px'}
       margin="0 auto"
-      borderRadius="24px"
+      borderRadius="1.5rem"
       boxShadow={'1px 2px 10px 1px rgba(0, 0, 0, 0.25)'}
-      padding="48px 28px 20px"
+      padding="3rem 1.75rem 1.25rem"
     >
       asdf
     </Box>

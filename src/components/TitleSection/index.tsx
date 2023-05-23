@@ -11,11 +11,11 @@ interface TitleSectionProps {
 
 const TitleSection = ({ name = '', mode }: TitleSectionProps) => {
   return (
-    <Flex flexDir="column" marginBottom="40px">
+    <Flex flexDir="column" marginBottom="2.5rem">
       <Text fontSize={palette.fontSize.title} fontWeight="700">
         {mode === 'rank' ? 'GSM 랭크' : `${name}님의 소환사 정보입니다!`}
       </Text>
-      <Text fontSize={palette.fontSize.content} lineHeight="40px">
+      <Text fontSize={palette.fontSize.content} lineHeight="2.5rem">
         {name && `${name}님의`} 순위가 계속 변동되고 있어요 🔥
       </Text>
 
@@ -35,7 +35,7 @@ const GrayText = ({ children }: { children: any }) => (
   <Text
     fontSize={palette.fontSize.content}
     color={palette.color.gray}
-    lineHeight="15px"
+    lineHeight="0.938rem"
   >
     {children}
   </Text>

@@ -18,19 +18,19 @@ const Login = () => {
       <Text
         fontSize={palette.fontSize.medium}
         fontWeight="700"
-        marginBottom="20px"
+        marginBottom="1.25rem"
       >
         랭킹의 모든 것, 지오엘
       </Text>
-      <Text align="center" lineHeight="25px" marginBottom="100px">
+      <Text align="center" lineHeight="1.563rem" marginBottom="6.25rem">
         GSM의 리그오브레전드 <br />
         랭킹 서비스
       </Text>
       <Button
         boxShadow="1px 2px 10px 1px rgba(0, 0, 0, 0.25)"
-        borderRadius="20px"
+        borderRadius="1.25rem"
         width="100%"
-        height="60px"
+        height="3.75rem"
         color={palette.color.main}
       >
         <Link href="https://gauth.co.kr/login?client_id=e5502aa30a504963a3327e84b916e1bff3eafe1987834bfd9806a01bf8c2a8cd&redirect_uri=http://localhost:3000/gauth/code">

@@ -18,8 +18,8 @@ const RegisterForm = ({ accountId }: RegisterFormProps) => {
       </Text>
       <Button
         onClick={() => setIsRegisterModalOpen(true)}
-        marginTop="50px"
-        height="50px"
+        marginTop="3.125rem"
+        height="3.125rem"
         colorScheme="blue"
       >
         등록

@@ -45,12 +45,12 @@ const GameHistoryItem = ({ data }: { data: Content }) => {
                 backgroundColor={data.win ? '#5653C2' : '#AF4444'}
                 fontSize="1px"
                 color={palette.color.white}
-                width="40px"
-                height="20px"
+                width="2.5rem"
+                height="1.25rem"
                 textAlign="center"
-                lineHeight="20px"
+                lineHeight="1.25rem"
                 fontWeight="700"
-                borderRadius="109px"
+                borderRadius="6.25rem"
                 zIndex="5"
                 css={css`
                   left: 50%;
@@ -65,10 +65,10 @@ const GameHistoryItem = ({ data }: { data: Content }) => {
                 backgroundColor="#000000"
                 fontSize="1px"
                 color={palette.color.white}
-                width="20px"
-                height="20px"
+                width="1.25rem"
+                height="1.25rem"
                 textAlign="center"
-                lineHeight="20px"
+                lineHeight="1.25rem"
                 fontWeight="700"
                 borderRadius="50%"
                 top="34.46px"

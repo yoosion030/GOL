@@ -31,7 +31,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
             rgba(0, 0, 0, 0.58) 100%
           );
         `}
-        height={isMobile ? '100%' : '280px'}
+        height={isMobile ? '100%' : '17.5rem'}
         position="absolute"
         z-index="2"
         width="100%"

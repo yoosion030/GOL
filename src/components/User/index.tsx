@@ -23,7 +23,7 @@ const User = () => {
       <TitleSection name={data && data[0]?.userDto?.name} mode="user" />
       <Text
         fontWeight="700"
-        marginBottom="20px"
+        marginBottom="1.25rem"
         fontSize={palette.fontSize.medium}
       >
         현재 등록된 소환사
