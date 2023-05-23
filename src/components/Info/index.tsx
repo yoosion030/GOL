@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { GameHistory, InfoBanner, Loading, RegisterForm } from 'components';
 import { useQuery } from 'react-query';
 import { formatNameNumber } from 'utils';
@@ -7,8 +8,6 @@ const Info = ({ nickname }: { nickname: string }) => {
   const { data, isLoading } = useQuery('getSummeonerByName', () =>
     getSummeonerByName(nickname),
   );
-
-  if (isLoading) return <Loading />;
 
   const name = formatNameNumber(
     data?.userDto?.grade,
@@ -25,10 +24,18 @@ const Info = ({ nickname }: { nickname: string }) => {
         profileIconId={data?.profileIconId}
       />
 
-      {!data?.isRegistered ? (
-        <RegisterForm accountId={data?.accountId} />
+      {isLoading ? (
+        <Box padding="3.75rem 0">
+          <Loading />
+        </Box>
       ) : (
-        <GameHistory id={data.id} />
+        <>
+          {!data?.isRegistered ? (
+            <RegisterForm accountId={data?.accountId} />
+          ) : (
+            <GameHistory id={data.id} />
+          )}
+        </>
       )}
     </>
   );
