@@ -14,3 +14,13 @@ export const getLogin = async (code: string) => {
     console.error(e);
   }
 };
+
+export const getSignout = async () => {
+  try {
+    await instance.get('api/auth/v1/signout');
+    window.localStorage.clear();
+    window.location.replace('/gauth');
+  } catch (e) {
+    console.error(e);
+  }
+};
