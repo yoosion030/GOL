@@ -1,20 +1,27 @@
 import Image from 'next/image';
 import { css } from '@emotion/react';
+import { useMobileMediaQuery } from 'hooks';
 
-const ItemImage = ({ src }: { src: string }) => {
+interface ItemImageProps {
+  src: string;
+}
+
+const ItemImage = ({ src }: ItemImageProps) => {
+  const [isMobile] = useMobileMediaQuery();
+
   return (
     <Image
       alt=""
       src={src}
       css={css`
-        border-radius: 8px;
+        border-radius: 0.5rem;
         background-color: black;
         object-fit: none;
       `}
-      width="22"
-      height="22"
+      width={isMobile ? '16' : '22'}
+      height={isMobile ? '16' : '22'}
       placeholder="blur"
-      blurDataURL="/static/ItemNull.png"
+      blurDataURL="/static/ProfileBlur.png"
     />
   );
 };

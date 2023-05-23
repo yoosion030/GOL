@@ -9,13 +9,16 @@ import {
   formatRuneImage,
   formatSpellImage,
 } from 'utils/format';
+import { useMobileMediaQuery } from 'hooks';
 
 interface GameHistoryItemProps {
   data: Content;
 }
 
 const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
+  const [isMobile] = useMobileMediaQuery();
   const KDA = (data.kills + data.assists / data.deaths).toFixed(1);
+
   return (
     <>
       <Flex
@@ -39,8 +42,8 @@ const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
           <Flex gap="0.438rem" alignItems="center">
             <Box position="relative">
               <Image
-                width="55"
-                height="55"
+                width={isMobile ? '45' : '55'}
+                height={isMobile ? '45' : '55'}
                 css={css`
                   border-radius: 50%;
                 `}
@@ -51,9 +54,9 @@ const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
               />
               <Box
                 position="absolute"
-                bottom="-10px"
+                bottom="-0.5rem"
                 backgroundColor={data.win ? '#5653C2' : '#AF4444'}
-                fontSize="1px"
+                fontSize="0.5rem"
                 color={palette.color.white}
                 width="2.5rem"
                 height="1.25rem"
@@ -73,7 +76,7 @@ const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
                 position="absolute"
                 bottom="0"
                 backgroundColor="#000000"
-                fontSize="1px"
+                fontSize="0.5rem"
                 color={palette.color.white}
                 width="1.25rem"
                 height="1.25rem"
@@ -81,8 +84,8 @@ const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
                 lineHeight="1.25rem"
                 fontWeight="700"
                 borderRadius="50%"
-                top="34.46px"
-                left="40.62px"
+                top="2.154rem"
+                left="2.5rem"
               >
                 {data.champLevel}
               </Box>
