@@ -1,7 +1,7 @@
+import { useQuery } from 'react-query';
 import { Box } from '@chakra-ui/react';
 import { GameHistory, InfoBanner, Loading, RegisterForm } from 'components';
-import { useQuery } from 'react-query';
-import { formatNameNumber } from 'utils';
+import { formatNameNumber } from 'utils/format';
 import { getSummeonerByName } from 'utils/summeoner';
 
 const Info = ({ nickname }: { nickname: string }) => {

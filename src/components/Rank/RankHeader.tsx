@@ -1,7 +1,11 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { labelType } from 'types/Rank';
 
-const RankHeader = ({ label }: { label: labelType }) => {
+interface RankHeaderProps {
+  label: labelType;
+}
+
+const RankHeader = ({ label }: RankHeaderProps) => {
   return (
     <Flex
       height="2.813rem"

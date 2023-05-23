@@ -3,7 +3,7 @@ import { Button, Flex, Text } from '@chakra-ui/react';
 import { deleteSummeoner } from 'utils/summeoner';
 import { useState } from 'react';
 import Image from 'next/image';
-import { formatProfileImage } from 'utils';
+import { formatProfileImage } from 'utils/format';
 import { css } from '@emotion/react';
 import { SummeonerType } from 'types/Summoner';
 import Link from 'next/link';

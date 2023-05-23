@@ -1,3 +1,4 @@
+import { useQuery } from 'react-query';
 import { Box, Button } from '@chakra-ui/react';
 import {
   Loading,
@@ -6,7 +7,6 @@ import {
   TitleSection,
   UserInfo,
 } from 'components';
-import { useQuery } from 'react-query';
 import { getLogout } from 'utils/auth';
 import { getSummeonerByUser } from 'utils/summeoner';
 

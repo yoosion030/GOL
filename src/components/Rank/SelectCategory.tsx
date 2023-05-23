@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import { Dispatch, SetStateAction } from 'react';
+import styled from '@emotion/styled';
 import { palette } from 'shared/styles/Palette';
 import { CategoryType, labelType, RankCategoryType } from 'types/Rank';
 

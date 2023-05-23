@@ -1,8 +1,8 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Flex, Icon, Text } from '@chakra-ui/react';
 import * as I from 'assets';
 import { useMobileMediaQuery } from 'hooks';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { palette } from 'shared/styles/Palette';
 import { TabBarItemType } from 'types/TabBar';
 

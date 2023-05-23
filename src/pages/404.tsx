@@ -1,5 +1,5 @@
-import { NotFound, SEOHelmet } from 'components';
 import type { NextPage } from 'next';
+import { NotFound, SEOHelmet } from 'components';
 
 const NotFoundPage: NextPage = () => {
   return (

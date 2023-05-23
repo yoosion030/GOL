@@ -1,11 +1,11 @@
-import { Flex, Text } from '@chakra-ui/react';
-import { css } from '@emotion/react';
-import { useMobileMediaQuery } from 'hooks';
 import Image from 'next/image';
 import Link from 'next/link';
+import { css } from '@emotion/react';
+import { Flex, Text } from '@chakra-ui/react';
+import { useMobileMediaQuery } from 'hooks';
 import { palette } from 'shared/styles/Palette';
 import { RankType } from 'types/Rank';
-import { formatNameNumber, formatRank } from 'utils';
+import { formatNameNumber, formatRank } from 'utils/format';
 
 const RankItem = ({
   data: { rankType, rankValue, rankingNumber, summonerResDto },

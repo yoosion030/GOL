@@ -1,5 +1,5 @@
-import { Login, SEOHelmet } from 'components';
 import type { NextPage } from 'next';
+import { Login, SEOHelmet } from 'components';
 
 const LoginPage: NextPage = () => {
   return (

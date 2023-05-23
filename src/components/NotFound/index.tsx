@@ -1,5 +1,5 @@
-import * as I from 'assets';
 import { Container, Text } from '@chakra-ui/react';
+import * as I from 'assets';
 import { palette } from 'shared/styles/Palette';
 
 const NotFound = () => {

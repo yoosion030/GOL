@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Modal, PageLayout } from 'components';
-import { registerSummeoner } from 'utils/summeoner';
 import { Button, Text } from '@chakra-ui/react';
+import { Modal, PageLayout } from 'components';
 import { palette } from 'shared/styles/Palette';
+import { registerSummeoner } from 'utils/summeoner';
 
 interface RegisterFormProps {
   accountId?: string;

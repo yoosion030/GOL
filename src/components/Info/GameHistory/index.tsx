@@ -1,6 +1,6 @@
-import { GameHistoryItem, NonData, Loading } from 'components';
-import { Box } from '@chakra-ui/react';
 import { useQuery } from 'react-query';
+import { Box } from '@chakra-ui/react';
+import { GameHistoryItem, NonData, Loading } from 'components';
 import { getGameHistory } from 'utils/match';
 
 interface GameHistoryProps {

@@ -1,6 +1,6 @@
+import { useRouter } from 'next/router';
 import { Flex } from '@chakra-ui/react';
 import { TabBar } from 'components';
-import { useRouter } from 'next/router';
 import { palette } from 'shared/styles/Palette';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

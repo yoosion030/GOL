@@ -1,12 +1,20 @@
-import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
 import Image from 'next/image';
 import { css } from '@emotion/react';
+import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
 import { ItemImage } from 'components';
 import { palette } from 'shared/styles/Palette';
 import { Content } from 'types/Match';
-import { formatItemImage, formatRuneImage, formatSpellImage } from 'utils';
+import {
+  formatItemImage,
+  formatRuneImage,
+  formatSpellImage,
+} from 'utils/format';
 
-const GameHistoryItem = ({ data }: { data: Content }) => {
+interface GameHistoryItemProps {
+  data: Content;
+}
+
+const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
   const KDA = (data.kills + data.assists / data.deaths).toFixed(1);
   return (
     <>

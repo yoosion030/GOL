@@ -5,7 +5,7 @@ import { palette } from 'shared/styles/Palette';
 import { SummonersInfo } from 'types/Info';
 import { useRandomCharacter, useMobileMediaQuery } from 'hooks';
 import styled from '@emotion/styled';
-import { formatProfileImage } from 'utils';
+import { formatProfileImage } from 'utils/format';
 
 const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
   const image = useRandomCharacter();

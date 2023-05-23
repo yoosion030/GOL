@@ -1,9 +1,9 @@
-import { Box, Flex, Input } from '@chakra-ui/react';
-import { palette } from 'shared/styles/Palette';
-import { useForm } from 'react-hook-form';
-import * as I from 'assets';
 import { useRouter } from 'next/router';
+import { useForm } from 'react-hook-form';
+import { Box, Flex, Input } from '@chakra-ui/react';
+import * as I from 'assets';
 import { useMobileMediaQuery } from 'hooks';
+import { palette } from 'shared/styles/Palette';
 
 interface SearchType {
   nickname: string;

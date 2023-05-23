@@ -1,5 +1,5 @@
-import { NonData, SEOHelmet } from 'components';
 import type { NextPage } from 'next';
+import { NonData, SEOHelmet } from 'components';
 
 const ErrorPage: NextPage = () => {
   return (

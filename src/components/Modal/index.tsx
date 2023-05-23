@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { useMobileMediaQuery } from 'hooks';
 import { palette } from 'shared/styles/Palette';
+
 interface ModalPropsType {
   isOpen: boolean;
   onClose: () => void;
@@ -27,8 +28,6 @@ const ModalContainer = ({
   colorScheme,
   success,
 }: ModalPropsType) => {
-  const [isMobile] = useMobileMediaQuery();
-
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay backgroundColor="rgba(0, 0, 0, 0.24)" />

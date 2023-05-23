@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { Button, Flex, Text } from '@chakra-ui/react';
 import * as I from 'assets';
-import Link from 'next/link';
 import { palette } from 'shared/styles/Palette';
 
 const Login = () => {

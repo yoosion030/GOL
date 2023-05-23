@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useQuery } from 'react-query';
 import { Box } from '@chakra-ui/react';
 import {
   PageLayout,
@@ -8,8 +10,6 @@ import {
   NonData,
   Loading,
 } from 'components';
-import { useState } from 'react';
-import { useQuery } from 'react-query';
 import { RankCategoryType } from 'types/Rank';
 import { getRankByCategory } from 'utils/rank';
 

@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { Box, Flex } from '@chakra-ui/react';
-import { useRandomCharacter } from 'hooks';
+import { css } from '@emotion/react';
 import * as I from 'assets';
 import { SearchInput } from 'components';
-import { css } from '@emotion/react';
+import { useRandomCharacter } from 'hooks';
 
 const SearchBanner = () => {
   const image = useRandomCharacter();

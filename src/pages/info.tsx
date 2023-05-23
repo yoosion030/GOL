@@ -1,5 +1,5 @@
-import { Search, SEOHelmet } from 'components';
 import type { NextPage } from 'next';
+import { Search, SEOHelmet } from 'components';
 
 const SearchPage: NextPage = () => {
   return (
