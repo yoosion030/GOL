@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { css } from '@emotion/react';
-import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ItemImage } from 'components';
 import { palette } from 'shared/styles/Palette';
 import { Content } from 'types/Match';
@@ -17,7 +17,7 @@ interface GameHistoryItemProps {
 
 const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
   const [isMobile] = useMobileMediaQuery();
-  const KDA = (data.kills + data.assists / data.deaths).toFixed(1);
+  const KDA = ((data.kills + data.assists) / data.deaths).toFixed(1);
 
   return (
     <>
@@ -97,8 +97,13 @@ const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
               <ItemImage src={formatRuneImage(data.subStyle)} />
             </Grid>
           </Flex>
-          <Box textAlign="center">
-            {data.kills} / {data.deaths} / {data.assists} <br /> 111 ({KDA}) CS
+          <Box textAlign="center" lineHeight="1.3">
+            {data.kills} /{' '}
+            <Text color={palette.color.red} display="inline">
+              {data.deaths}
+            </Text>{' '}
+            / {data.assists}
+            <br />({KDA})
           </Box>
           <Grid templateColumns="repeat(3, 1fr)" gap="2px">
             <ItemImage src={formatItemImage(data.item0)} />

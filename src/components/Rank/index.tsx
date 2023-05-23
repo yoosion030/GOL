@@ -30,14 +30,23 @@ const Rank = () => {
       <SelectCategory onChangeCategory={setCategory} />
       <Box overflow="scroll" height="55.5rem" position="relative">
         <RankHeader label={category.label} />
-        <Box padding="100px 0 13.875rem">
-          {isLoading && <Loading />}
-          {data?.length === 0 ? (
-            <NonData title="랭킹 정보가 없습니다." />
+
+        <Box
+          paddingBottom="8rem"
+          paddingTop={`${isLoading || data?.length === 0 ? '6.25rem' : 0}`}
+        >
+          {isLoading ? (
+            <Loading />
           ) : (
-            data?.map(rank => (
-              <RankItem data={rank} key={rank.summonerResDto.accountId} />
-            ))
+            <>
+              {data?.length === 0 ? (
+                <NonData title="랭킹 정보가 없습니다." />
+              ) : (
+                data?.map(rank => (
+                  <RankItem data={rank} key={rank.summonerResDto.accountId} />
+                ))
+              )}
+            </>
           )}
         </Box>
       </Box>
