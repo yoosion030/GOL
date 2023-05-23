@@ -7,6 +7,9 @@ const formatTier = (
 ): string => {
   let krTier = '';
   switch (tier) {
+    case 'IRON':
+      krTier = '아이언';
+      break;
     case 'BRONZE':
       krTier = '브론즈';
       break;
