@@ -46,6 +46,8 @@ const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
                 `}
                 src={data.championProfileUri}
                 alt=""
+                placeholder="blur"
+                blurDataURL="/static/ProfileBlur.png"
               />
               <Box
                 position="absolute"

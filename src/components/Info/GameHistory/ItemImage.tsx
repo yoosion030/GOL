@@ -13,6 +13,8 @@ const ItemImage = ({ src }: { src: string }) => {
       `}
       width="22"
       height="22"
+      placeholder="blur"
+      blurDataURL="/static/ItemNull.png"
     />
   );
 };

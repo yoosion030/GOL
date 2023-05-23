@@ -18,7 +18,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
         alt=""
         layout="fill"
         placeholder="blur"
-        blurDataURL={`/Character/${image}.png`}
+        blurDataURL="/static/BannerBlur.png"
       />
 
       <Box
@@ -53,6 +53,8 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
           css={css`
             border-radius: 10px;
           `}
+          placeholder="blur"
+          blurDataURL="/static/ProfileBlur.png"
         />
         <Flex flexDir="column" width="75%" gap="10px">
           <Text

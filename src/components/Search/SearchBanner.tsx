@@ -16,7 +16,7 @@ const SearchBanner = () => {
         width="500"
         height="280"
         placeholder="blur"
-        blurDataURL={`/Character/${image}.png`}
+        blurDataURL="/static/BannerBlur.png"
         css={css`
           filter: brightness(40%);
         `}

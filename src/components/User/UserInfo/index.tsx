@@ -29,6 +29,8 @@ const UserInfo = ({ data }: { data: SummeonerType }) => {
           margin-right: 0.625rem;
         `}
         alt=""
+        placeholder="blur"
+        blurDataURL="/static/ProfileBlur.png"
       />
       <Flex
         flexDir="column"
