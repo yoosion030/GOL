@@ -48,8 +48,8 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
         <Image
           src={formatProfileImage(profileIconId)}
           alt=""
-          width="80"
-          height="80"
+          width={isMobile ? '60' : '80'}
+          height={isMobile ? '60' : '80'}
           css={css`
             border-radius: 10px;
           `}
