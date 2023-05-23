@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { Box, Flex } from '@chakra-ui/react';
-import useRandomBackground from 'hooks/useRandomCharacter';
+import { useRandomCharacter } from 'hooks';
 import * as I from 'assets';
 import { SearchInput } from 'components';
 import { css } from '@emotion/react';
 
 const SearchBanner = () => {
-  const image = useRandomBackground();
+  const image = useRandomCharacter();
 
   return (
     <Flex justifyContent="center" alignItems="center" position="relative">

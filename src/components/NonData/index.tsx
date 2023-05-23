@@ -1,5 +1,5 @@
 import { Flex, Text } from '@chakra-ui/react';
-import useRandomFeeling from 'hooks/useRandomFeeling';
+import { useRandomFeeling } from 'hooks';
 import Image from 'next/image';
 
 interface NonDataProps {

@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react';
-import useMobileMediaQuery from 'hooks/useMobileMediaQuery';
+import { useMobileMediaQuery } from 'hooks';
 
 const Slide = () => {
   const [isMobile] = useMobileMediaQuery();
