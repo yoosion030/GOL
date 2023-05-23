@@ -47,6 +47,7 @@ export interface RankCategoryType {
 }
 
 export type TierType =
+  | 'IRON'
   | 'BRONZE'
   | 'SILVER'
   | 'GOLD'
