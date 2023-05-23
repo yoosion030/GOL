@@ -24,7 +24,7 @@ const SearchInput = () => {
       alignItems="center"
       width="100%"
       position="absolute"
-      top={isMobile ? '12rem' : '11.1rem'}
+      top="70%"
       padding="0 2.188rem"
       as="form"
       onSubmit={handleSubmit(handleSearch)}
@@ -54,7 +54,7 @@ const SearchInput = () => {
         position="absolute"
         fill="rgba(255, 255, 255, 0.6)"
         zIndex="5"
-        marginRight={isMobile ? '2.5rem' : '1.625rem'}
+        right="15%"
         cursor="pointer"
         as="button"
       >

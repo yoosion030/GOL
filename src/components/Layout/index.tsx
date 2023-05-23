@@ -5,7 +5,7 @@ import { palette } from 'shared/styles/Palette';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
-  const isTabBarNeeded = ['/gauth'].includes(router.pathname);
+  const isTabBarNeeded = ['/gauth', '/gauth/code'].includes(router.pathname);
   const isReverseBackgroundColor = ['/gauth', '/404'].includes(router.pathname);
 
   return (
