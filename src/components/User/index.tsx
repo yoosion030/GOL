@@ -8,6 +8,7 @@ import {
 } from 'components';
 import { useQuery } from 'react-query';
 import { palette } from 'shared/styles/Palette';
+import { getLogout } from 'utils/auth';
 import { getSummeonerByUser } from 'utils/summeoner';
 
 const User = () => {
@@ -33,6 +34,7 @@ const User = () => {
       ) : (
         data?.map((info, i) => <UserInfo key={i} data={info} />)
       )}
+      <div onClick={getLogout}>로그아웃</div>
     </PageLayout>
   );
 };

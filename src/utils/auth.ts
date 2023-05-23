@@ -15,9 +15,9 @@ export const getLogin = async (code: string) => {
   }
 };
 
-export const getSignout = async () => {
+export const getLogout = async () => {
   try {
-    await instance.get('api/auth/v1/signout');
+    await instance.get('api/auth/v1/logout');
     window.localStorage.clear();
     window.location.replace('/gauth');
   } catch (e) {
