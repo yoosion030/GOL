@@ -7,33 +7,49 @@ import { formatProfileImage } from 'utils';
 import { css } from '@emotion/react';
 import { SummeonerType } from 'types/Summoner';
 import Link from 'next/link';
+import { palette } from 'shared/styles/Palette';
+import { useMobileMediaQuery } from 'hooks';
 
 const UserInfo = ({ data }: { data: SummeonerType }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-
+  const [isMobile] = useMobileMediaQuery();
   return (
-    <Flex alignItems="center" height="4.375rem" justifyContent="space-between">
+    <Flex
+      alignItems="center"
+      height="4.25rem"
+      justifyContent="space-between"
+      marginBottom="1.875rem"
+    >
       <Image
         src={formatProfileImage(data?.profileIconId)}
-        width="50"
-        height="50"
+        width={isMobile ? '35' : '50'}
+        height={isMobile ? '35' : '50'}
         css={css`
           border-radius: 50%;
           margin-right: 0.625rem;
         `}
         alt=""
       />
-      <Text flex="1" fontWeight="500">
-        <Link href={`info/${data.name}`}>{data?.name}</Link>
-      </Text>
+      <Flex
+        flexDir="column"
+        justifyContent="space-between"
+        flex="1"
+        fontWeight="500"
+        height={isMobile ? '35px' : '42px'}
+        fontSize="0.875rem"
+      >
+        <Link href={`info/${data.name}`}>
+          <Text>{data?.name}</Text>
+        </Link>
+        <Text color={palette.color.main}>Lv. {data.summonerLevel}</Text>
+      </Flex>
       <Button
         onClick={() => setIsDeleteModalOpen(true)}
-        width="6.25rem"
-        fontSize="0.8rem"
-        height="2.5rem"
-        colorScheme="red"
+        color={palette.color.gray}
+        background="none"
+        fontSize="0.875rem"
       >
-        등록 해제하기
+        등록 해제
       </Button>
       <Modal
         isOpen={isDeleteModalOpen}
