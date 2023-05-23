@@ -35,7 +35,7 @@ const SelectCategory = ({
 export default SelectCategory;
 
 const Select = styled.select`
-  height: 40px;
+  height: 2.5rem;
   background-color: rgba(20, 97, 184, 0.1);
   color: ${palette.color.main};
   font-size: ${palette.fontSize.content};
@@ -50,7 +50,7 @@ const Select = styled.select`
   font-weight: 700;
   font-size: 0.75rem;
   line-height: 15px;
-  text-align: center;
   width: 4.375rem;
   margin-bottom: 1.25rem;
+  text-align: center;
 `;
