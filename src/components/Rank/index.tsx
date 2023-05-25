@@ -12,6 +12,7 @@ import {
 } from 'components';
 import { RankCategoryType } from 'types/Rank';
 import { getRankByCategory } from 'utils/rank';
+import { getSummeonerByUser } from 'utils/summeoner';
 
 const Rank = () => {
   const [category, setCategory] = useState<RankCategoryType>({
@@ -22,6 +23,11 @@ const Rank = () => {
   const { data, isLoading } = useQuery(
     `getRankByCategory-${category.category}`,
     () => getRankByCategory(category.category),
+  );
+
+  const { data: summonerData } = useQuery(
+    'getSummeonerByUser',
+    getSummeonerByUser,
   );
 
   return (
@@ -43,7 +49,11 @@ const Rank = () => {
                 <NonData title="랭킹 정보가 없습니다." />
               ) : (
                 data?.map(rank => (
-                  <RankItem data={rank} key={rank.summonerResDto.accountId} />
+                  <RankItem
+                    data={rank}
+                    key={rank.summonerResDto.accountId}
+                    userName={summonerData && summonerData[0].userDto?.name}
+                  />
                 ))
               )}
             </>

@@ -7,11 +7,15 @@ import { palette } from 'shared/styles/Palette';
 import { RankType } from 'types/Rank';
 import { formatNameNumber, formatRank } from 'utils/format';
 
+interface RankItemProps {
+  data: RankType;
+  userName?: string;
+}
+
 const RankItem = ({
   data: { rankType, rankValue, rankingNumber, summonerResDto },
-}: {
-  data: RankType;
-}) => {
+  userName,
+}: RankItemProps) => {
   const [isMobile] = useMobileMediaQuery();
   const { userDto } = summonerResDto;
 
@@ -30,6 +34,14 @@ const RankItem = ({
       alignItems="center"
       height="4.688rem"
       padding="0 0.75rem"
+      css={
+        userName === userDto.name &&
+        css`
+          background-color: #e3f0ff;
+        `
+      }
+      borderRadius="1rem"
+      marginTop="0.5rem"
     >
       <Text
         fontSize={palette.fontSize.medium}

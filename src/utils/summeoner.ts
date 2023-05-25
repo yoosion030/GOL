@@ -30,7 +30,7 @@ export const registerSummeoner = async (accountId?: string) => {
     await instance.post('api/summoner/v1/summoner', {
       accountId,
     });
-    window.location.reload();
+    window.location.replace('/user');
   } catch (e) {
     console.log(e);
   }
@@ -38,11 +38,8 @@ export const registerSummeoner = async (accountId?: string) => {
 
 export const deleteSummeoner = async (accountId: string) => {
   try {
-    await instance.delete('api/summoner/v1/summoner', {
-      data: {
-        accountId,
-      },
-    });
+    await instance.delete('api/summoner/v1/summoner', { data: { accountId } });
+
     window.location.reload();
   } catch (e) {
     console.log(e);
