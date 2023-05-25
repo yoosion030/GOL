@@ -3,6 +3,7 @@ import { QueryClientProvider, QueryClient } from 'react-query';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Layout } from 'components';
 import { GlobalStyle } from 'shared/styles/GlobalStyle';
+import Middleware from 'components/Middleware';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider>
         <GlobalStyle />
         <Layout>
-          <Component {...pageProps} />
+          <Middleware>
+            <Component {...pageProps} />
+          </Middleware>
         </Layout>
       </ChakraProvider>
     </QueryClientProvider>
