@@ -42,7 +42,7 @@ const InfoBanner = ({ profileIconId, nickname, name }: SummonersInfo) => {
       <Flex
         position="relative"
         zIndex="5"
-        padding={isMobile ? '9rem 1.875rem 0' : '10rem 1.875rem 0'}
+        padding={isMobile ? '9rem 1.875rem 8rem' : '10rem 1.875rem 10rem'}
         justifyContent="space-between"
       >
         <Image
