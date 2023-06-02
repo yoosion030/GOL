@@ -46,6 +46,7 @@ export interface Content {
   item4Uri: string;
   item5Uri: string;
   item6Uri: string;
+  queueId: number;
 }
 
 export interface SortType {

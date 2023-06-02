@@ -5,3 +5,4 @@ export { default as formatRuneImage } from './formatRuneImage';
 export { default as formatSpellImage } from './formatSpellImage';
 export { default as formatItemImage } from './formatItemImage';
 export { default as formatProfileImage } from './formatProfileImage';
+export { default as formatGameMode } from './formatGameMode';

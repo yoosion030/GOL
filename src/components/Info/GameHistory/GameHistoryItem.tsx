@@ -5,6 +5,7 @@ import { ItemImage } from 'components';
 import { palette } from 'shared/styles/Palette';
 import { Content } from 'types/Match';
 import {
+  formatGameMode,
   formatItemImage,
   formatRuneImage,
   formatSpellImage,
@@ -97,13 +98,17 @@ const GameHistoryItem = ({ data }: GameHistoryItemProps) => {
               <ItemImage src={formatRuneImage(data.subStyle)} />
             </Grid>
           </Flex>
-          <Box textAlign="center" lineHeight="1.3">
+          <Box textAlign="center" lineHeight="1.3" fontWeight="700">
             {data.kills} /{' '}
             <Text color={palette.color.red} display="inline">
               {data.deaths}
             </Text>{' '}
             / {data.assists}
             <br />({KDA})
+            <br />{' '}
+            <Text fontWeight="400" fontSize="0.8rem">
+              {formatGameMode(data.queueId)}
+            </Text>
           </Box>
           <Grid templateColumns="repeat(3, 1fr)" gap="2px">
             <ItemImage src={formatItemImage(data.item0)} />
