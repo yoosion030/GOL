@@ -1,7 +1,7 @@
-import { ImageURL } from 'shared/Image';
+import { ImageURL, ImageVersion } from 'shared/Image';
 
 const formatProfileImage = (profileIconId?: number): string => {
-  return `${ImageURL}/13.10.1/img/profileicon/${profileIconId}.png`;
+  return `${ImageURL}/${ImageVersion}/img/profileicon/${profileIconId}.png`;
 };
 
 export default formatProfileImage;
