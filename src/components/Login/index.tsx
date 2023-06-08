@@ -33,7 +33,7 @@ const Login = () => {
         height="3.75rem"
         color={palette.color.main}
       >
-        <Link href="http://gauth.co.kr/login?client_id=e5502aa30a504963a3327e84b916e1bff3eafe1987834bfd9806a01bf8c2a8cd&redirect_uri=https://gsm-of-legend.vercel.app/gauth/code">
+        <Link href="https://gauth.co.kr/login?client_id=e5502aa30a504963a3327e84b916e1bff3eafe1987834bfd9806a01bf8c2a8cd&redirect_uri=https://gsm-of-legend.vercel.app/gauth/code">
           Sign in with GAuth
         </Link>
       </Button>
