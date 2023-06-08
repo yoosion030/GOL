@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-const Middleware = ({ children }: any) => {
+const Middleware = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
 
   useEffect(() => {

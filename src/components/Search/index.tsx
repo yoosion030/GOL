@@ -4,7 +4,9 @@ const Search = () => {
   return (
     <>
       <SearchBanner />
-      <PageLayout>{/* <Slide /> */}</PageLayout>
+      <PageLayout>
+        <Slide />
+      </PageLayout>
     </>
   );
 };
