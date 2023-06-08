@@ -38,7 +38,10 @@ const formatRuneImage = (runeId: number) => {
     case 8351:
       return `${ImageURL}/img/perk-images/Styles/Inspiration/GlacialAugment/GlacialAugment.png`;
     case 8360:
-      return `${ImageURL}/img/perk-images/Styles/Inspiration/UnsealedSpellbook/UnsealedSpellbook.png"`;
+      return `${ImageURL}/img/perk-images/Styles/Inspiration/UnsealedSpellbook/UnsealedSpellbook.png`;
+    // 선제 공격 룬을 찾을 수 없어 대체
+    case 8369:
+      return `https://opgg-static.akamaized.net/meta/images/lol/perk/8369.png?image=q_auto,f_webp,w_44&v=1686102337708`;
     case 8358:
       return `${ImageURL}/img/perk-images/Styles/Inspiration/MasterKey/MasterKey.png`;
     case 8306:
