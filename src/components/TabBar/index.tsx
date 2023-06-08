@@ -12,7 +12,7 @@ const TabBar = () => {
   const TabBarItem: TabBarItemType[] = [
     { icon: <I.SearchIcon />, link: '/info', desc: 'search' },
     { icon: <I.RankIcon />, link: '/rank', desc: 'ranking' },
-    { icon: <I.AboutIcon />, link: '/about', desc: 'about' },
+    // { icon: <I.AboutIcon />, link: '/about', desc: 'about' },
     { icon: <I.UserIcon />, link: '/user', desc: 'my' },
   ];
 

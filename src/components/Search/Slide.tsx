@@ -1,5 +1,4 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import Loading from 'components/Loading';
 import { useMobileMediaQuery, useRandomFeeling } from 'hooks';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -15,6 +14,8 @@ const Slide = () => {
     'SUMMONER_LEVEL',
     'MATCH_COUNT',
     'TIER_RANKED_SOLO_5x5',
+    'CUR_LOSE_STREAK',
+    'CUR_WIN_STREAK',
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,12 +30,11 @@ const Slide = () => {
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  const { data, isLoading } = useQuery(
-    `getGameHistory-${dots[currentSlide]}`,
-    () => getRankByCategory(dots[currentSlide]),
+  const { data } = useQuery(`getGameHistory-${dots[currentSlide]}`, () =>
+    getRankByCategory(dots[currentSlide]),
   );
 
-  const slideData: RankType | undefined = data && data[3];
+  const slideData: RankType | undefined = data && data[0];
 
   const image = useRandomFeeling();
 
@@ -57,8 +57,8 @@ const Slide = () => {
             {slideData?.summonerResDto.name}님이
           </Text>
           <Text fontSize={palette.fontSize.mobileTitle} fontWeight="700">
-            {slideData && formatRank(slideData?.rankType, slideData?.rankValue)}
-            을 달성했어요!
+            {slideData && formatRank(slideData?.rankType, slideData?.rankValue)}{' '}
+            달성!
           </Text>
         </Box>
         <Image
