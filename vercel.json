@@ -1,0 +1,9 @@
+{
+  "builds": [{ "src": "public/**/*", "use": "@vercel/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "public/$1", "status": 200 }],
+  "server": {
+    "headers": {
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+    }
+  }
+}
