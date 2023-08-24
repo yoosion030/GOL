@@ -1,6 +1,5 @@
 import { Modal } from 'components';
 import { Button, Flex, Text } from '@chakra-ui/react';
-import { deleteSummeoner } from 'utils/summeoner';
 import { useState } from 'react';
 import Image from 'next/image';
 import { formatProfileImage } from 'utils/format';
@@ -8,11 +7,13 @@ import { css } from '@emotion/react';
 import { SummeonerType } from 'types/Summoner';
 import Link from 'next/link';
 import { palette } from 'shared/styles/Palette';
-import { useMobileMediaQuery } from 'hooks';
+import { useDeleteSummeoner, useMobileMediaQuery } from 'hooks';
 
 const UserInfo = ({ data }: { data: SummeonerType }) => {
+  const { mutate } = useDeleteSummeoner();
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isMobile] = useMobileMediaQuery();
+
   return (
     <Flex
       alignItems="center"
@@ -60,7 +61,7 @@ const UserInfo = ({ data }: { data: SummeonerType }) => {
         modalContent={`등록 해제 시 모든 기록이 삭제됩니다. \n정말로 등록 해제를 진행하시겠습니까? \n이 작업은 되돌릴 수 없습니다.`}
         mode="해제"
         colorScheme="red"
-        success={() => deleteSummeoner(data?.accountId)}
+        success={() => mutate(data?.accountId)}
       />
     </Flex>
   );

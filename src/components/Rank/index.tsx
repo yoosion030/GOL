@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useQuery } from 'react-query';
 import { Box } from '@chakra-ui/react';
 import {
   PageLayout,
@@ -11,8 +10,7 @@ import {
   Loading,
 } from 'components';
 import { RankCategoryType } from 'types/Rank';
-import { getRankByCategory } from 'utils/rank';
-import { getSummeonerByUser } from 'utils/summeoner';
+import { useGetSummeonerByUser, useGetRankByCategory } from 'hooks';
 
 const Rank = () => {
   const [category, setCategory] = useState<RankCategoryType>({
@@ -20,15 +18,9 @@ const Rank = () => {
     label: '솔로랭크',
   });
 
-  const { data, isLoading } = useQuery(
-    `getRankByCategory-${category.category}`,
-    () => getRankByCategory(category.category),
-  );
+  const { data, isLoading } = useGetRankByCategory(category.category);
 
-  const { data: summonerData } = useQuery(
-    'getSummeonerByUser',
-    getSummeonerByUser,
-  );
+  const { data: summonerData } = useGetSummeonerByUser();
 
   return (
     <PageLayout>

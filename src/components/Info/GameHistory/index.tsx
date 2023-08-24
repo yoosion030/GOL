@@ -1,16 +1,14 @@
-import { useQuery } from 'react-query';
 import { Box } from '@chakra-ui/react';
 import { GameHistoryItem, NonData, Loading } from 'components';
 import { getGameHistory } from 'utils/match';
+import { useGetGameHistory } from 'hooks';
 
 interface GameHistoryProps {
   id: string;
 }
 
 const GameHistory = ({ id }: GameHistoryProps) => {
-  const { data, isLoading } = useQuery('getGameHistory', () =>
-    getGameHistory(id),
-  );
+  const { data, isLoading } = useGetGameHistory(id);
 
   const gameHistoryData = data?.content.sort(
     (a, b) => b.gameEndTimestamp - a.gameEndTimestamp,

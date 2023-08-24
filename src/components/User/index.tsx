@@ -1,4 +1,3 @@
-import { useQuery } from 'react-query';
 import { Box, Button } from '@chakra-ui/react';
 import {
   Loading,
@@ -7,14 +6,10 @@ import {
   TitleSection,
   UserInfo,
 } from 'components';
-import { getLogout } from 'utils/auth';
-import { getSummeonerByUser } from 'utils/summeoner';
+import { useGetLogout, useGetSummeonerByUser } from 'hooks';
 
 const User = () => {
-  const { data, isLoading } = useQuery(
-    'getSummeonerByUser',
-    getSummeonerByUser,
-  );
+  const { data, isLoading } = useGetSummeonerByUser();
 
   if (isLoading) return <Loading />;
 
@@ -30,7 +25,7 @@ const User = () => {
         )}
       </Box>
       <Button
-        onClick={getLogout}
+        onClick={useGetLogout}
         colorScheme="red"
         marginTop="auto"
         height="50px"

@@ -3,16 +3,15 @@ import type {
   GetServerSidePropsContext,
   NextPage,
 } from 'next';
-import { useQuery } from 'react-query';
 import { Loading, SEOHelmet } from 'components';
-import { getLogin } from 'utils/auth';
+import { useGetLogin } from 'hooks';
 
 interface LoginPageProps {
   code: string;
 }
 
 const LoginPage: NextPage<LoginPageProps> = ({ code }: LoginPageProps) => {
-  const { isLoading } = useQuery('login', () => getLogin(code));
+  const { isLoading } = useGetLogin(code);
   if (isLoading) return <Loading />;
 
   return (

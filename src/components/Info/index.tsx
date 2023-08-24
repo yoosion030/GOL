@@ -1,13 +1,10 @@
-import { useQuery } from 'react-query';
 import { Box } from '@chakra-ui/react';
 import { GameHistory, InfoBanner, Loading, RegisterForm } from 'components';
 import { formatNameNumber } from 'utils/format';
-import { getSummeonerByName } from 'utils/summeoner';
+import { useGetSummeonerByName } from 'hooks';
 
 const Info = ({ nickname }: { nickname: string }) => {
-  const { data, isLoading } = useQuery('getSummeonerByName', () =>
-    getSummeonerByName(nickname),
-  );
+  const { data, isLoading } = useGetSummeonerByName(nickname);
 
   const name = formatNameNumber(
     data?.userDto?.grade,

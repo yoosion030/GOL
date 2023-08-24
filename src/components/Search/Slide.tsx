@@ -1,12 +1,14 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { useMobileMediaQuery, useRandomFeeling } from 'hooks';
+import {
+  useGetRankByCategory,
+  useMobileMediaQuery,
+  useRandomFeeling,
+} from 'hooks';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
 import { palette } from 'shared/styles/Palette';
 import { CategoryType, RankType } from 'types/Rank';
 import { formatRank } from 'utils/format';
-import { getRankByCategory } from 'utils/rank';
 
 const Slide = () => {
   const [isMobile] = useMobileMediaQuery();
@@ -22,19 +24,15 @@ const Slide = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Increment the current slide index
       setCurrentSlide(prevSlide => (prevSlide + 1) % dots.length);
-    }, 5000);
+    }, 3000);
 
-    // Clear the timer when the component unmounts or when the current slide changes manually
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  const { data } = useQuery(`getGameHistory-${dots[currentSlide]}`, () =>
-    getRankByCategory(dots[currentSlide]),
-  );
+  const { data } = useGetRankByCategory(dots[currentSlide]);
 
-  const slideData: RankType | undefined = data && data[0];
+  const slideData: RankType | undefined = data && data[2];
 
   const image = useRandomFeeling();
 
@@ -56,8 +54,19 @@ const Slide = () => {
           <Text fontSize={palette.fontSize.mobileTitle} fontWeight="700">
             {slideData?.summonerResDto.name}님이
           </Text>
-          <Text fontSize={palette.fontSize.mobileTitle} fontWeight="700">
-            {slideData && formatRank(slideData?.rankType, slideData?.rankValue)}{' '}
+          <Text
+            fontSize={palette.fontSize.mobileTitle}
+            color={palette.color.main}
+            display="inline"
+            fontWeight="700"
+          >
+            {slideData && formatRank(slideData?.rankType, slideData?.rankValue)}
+          </Text>{' '}
+          <Text
+            fontSize={palette.fontSize.mobileTitle}
+            fontWeight="700"
+            display="inline"
+          >
             달성!
           </Text>
         </Box>

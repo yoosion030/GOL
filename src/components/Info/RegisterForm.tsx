@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { Button, Text } from '@chakra-ui/react';
 import { Modal, PageLayout } from 'components';
 import { palette } from 'shared/styles/Palette';
-import { registerSummeoner } from 'utils/summeoner';
+import { usePostRegisterSummeoner } from 'hooks';
 
 interface RegisterFormProps {
   accountId?: string;
 }
 
 const RegisterForm = ({ accountId }: RegisterFormProps) => {
+  const { mutate } = usePostRegisterSummeoner();
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
   return (
@@ -31,7 +32,7 @@ const RegisterForm = ({ accountId }: RegisterFormProps) => {
         modalContent={`본인의 계정이 아닌 다른 사람의 계정을 \n등록하지 않도록 주의해주세요.`}
         mode="등록"
         colorScheme="main"
-        success={() => registerSummeoner(accountId)}
+        success={() => mutate(accountId)}
       />
     </PageLayout>
   );
