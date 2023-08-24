@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { QueryClientProvider, QueryClient } from 'react-query';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Layout } from 'components';
 import { GlobalStyle } from 'shared/styles/GlobalStyle';
