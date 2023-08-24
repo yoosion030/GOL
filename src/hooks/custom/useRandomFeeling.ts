@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Feeling } from 'shared/Character';
 
-const useRandomFeeling = () => {
+export const useRandomFeeling = () => {
   const [image, setImage] = useState<string>('');
 
   useEffect(() => {
@@ -11,5 +11,3 @@ const useRandomFeeling = () => {
 
   return image;
 };
-
-export default useRandomFeeling;

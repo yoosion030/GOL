@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Character } from 'shared/Character';
 
-const useRandomCharacter = () => {
+export const useRandomCharacter = () => {
   const [image, setImage] = useState<string>('');
 
   useEffect(() => {
@@ -11,5 +11,3 @@ const useRandomCharacter = () => {
 
   return image;
 };
-
-export default useRandomCharacter;
